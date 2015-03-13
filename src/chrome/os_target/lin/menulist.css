@@ -1,0 +1,99 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== menulist.css ===================================================
+   == Styles used by the XUL menulist element.
+   ====================================================================== */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* :::::::::: menulist :::::::::: */
+
+menulist {
+  -moz-appearance: menulist;
+  margin: 2px 4px;
+  color: -moz-DialogText;
+}
+
+.menulist-label-box {
+  -moz-appearance: menulist-text;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 1px;
+  color: inherit;
+}
+
+.menulist-label {
+  margin: 1px 3px !important;
+}
+
+.menulist-dropmarker {
+  display: none;
+}
+
+menulist[disabled="true"] {
+  color: GrayText;
+}
+
+.menulist-description {
+  font-style: italic;
+  color: GrayText;
+  -moz-margin-start: 1ex !important;
+}
+
+/* ::::: editable menulists ::::: */
+
+menulist[editable="true"] {
+  -moz-appearance: none;
+  color: -moz-FieldText;
+}
+
+.menulist-editable-box {
+  -moz-appearance: menulist-textfield;
+}
+
+menulist[editable="true"] > .menulist-dropmarker {
+  display: -moz-box;
+  -moz-appearance: menulist-button;
+}
+
+html|*.menulist-editable-input {
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  font: inherit;
+}
+
+
+/* ::::: compact menulists ::::: */
+
+.menulist-compact {
+  -moz-appearance: button;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  color: -moz-DialogText;
+}
+
+.menulist-compact > .menulist-dropmarker {
+  -moz-appearance: none;
+  display: -moz-box;
+  -moz-margin-start: 2px;
+  padding: 0 !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+}
+
+.menulist-compact[disabled="true"] > .menulist-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+.menulist-compact > .menulist-label {
+  margin: 0 3px !important;
+  text-align: end;
+}  
+
+.menulist-compact[open="true"] {
+  color: ThreeDHighlight;
+}

@@ -1,0 +1,9 @@
+skin	global		f2tm	chrome/global/
+skin	browser		f2tm	chrome/browser/
+skin	mozapps		f2tm	chrome/mozapps/
+
+skin	os_target	f2tm	chrome/os_target/common/
+skin	os_target	f2tm	chrome/os_target/mac/		os=Darwin
+skin	os_target	f2tm	chrome/os_target/win/		os=WINNT
+skin	os_target	f2tm	chrome/os_target/lin/		os=Linux
+

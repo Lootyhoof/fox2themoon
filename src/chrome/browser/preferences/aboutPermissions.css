@@ -1,0 +1,137 @@
+*|*:root {
+  -moz-appearance: none;
+  padding: 18px;
+  color: -moz-dialogText;
+  background: -moz-Dialog;
+}
+
+/* Content */
+*|*.main-content {
+  /* Needed to allow the radius to clip the inner content, see bug 595656 */
+  /* Disabled because of bug 623615
+  overflow: hidden;
+  */
+  background: -moz-field;
+  border: 1px solid ThreeDShadow;
+  border-radius: 10px;
+}
+
+colorpicker[type="button"] {
+  margin: 1px 5px 2px 5px;
+  padding: 3px;
+  height: 25px;
+}
+
+/* sites box */
+
+#sites-box {
+  padding: 10px;
+  width: 25em;
+}
+
+#sites-filter {
+  margin: 0;
+}
+
+#sites-list {
+  -moz-appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.32);
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: 5px 0 0 0;
+}
+
+.site {
+  padding: 4px;
+  border-bottom: 1px solid ThreeDLightShadow;
+}
+
+.site-favicon {
+  height: 16px;
+  width: 16px;
+  -moz-margin-end: 4px;
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#all-sites-item > .site-container > .site-favicon {
+  list-style-image: none;
+}
+
+/* permissions box */
+
+#permissions-box {
+  padding-top: 10px;
+  overflow-y: auto;
+}
+
+#site-description {
+  font-size: 125%;
+  -moz-margin-start: 6px; /* to match button margin */
+}
+
+#site-label {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#defaults-description {
+  font-size: 125%;
+  font-weight: bold;
+  -moz-margin-start: 6px;
+}
+
+.pref-item {
+  margin-bottom: 10px;
+}
+
+.pref-icon {
+  width: 32px;
+  height: 32px;
+  -moz-margin-end: 10px;
+}
+
+/* no 64x64 Question image available, using the 32x32 one */
+.pref-icon[type="password"] {
+  list-style-image: url(chrome://mozapps/skin/passwordmgr/key-64.png);
+}
+.pref-icon[type="cookie"] {
+  list-style-image: url(chrome://global/skin/icons/Question.png);
+}
+.pref-icon[type="geo"] {
+  list-style-image: url(chrome://browser/skin/Geolocation-64.png);
+}
+.pref-icon[type="indexedDB"] {
+  list-style-image: url(chrome://global/skin/icons/Question.png);
+}
+.pref-icon[type="install"] {
+  list-style-image: url(chrome://mozapps/skin/extensions/extensionGeneric.png);
+}
+.pref-icon[type="popup"] {
+  list-style-image: url(chrome://global/skin/icons/Question.png);
+}
+.pref-icon[type="image"] {
+  list-style-image: url(chrome://global/skin/icons/Question.png);
+}
+.pref-icon[type="plugins"] {
+  list-style-image: url(chrome://mozapps/skin/plugins/pluginGeneric.png);
+}
+.pref-icon[type="fullscreen"] {
+  list-style-image: url(chrome://browser/skin/Toolbar-fullscreen.png);
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+  width:24px;
+  height:24px;
+  -moz-margin-end: 18px;
+}
+
+.pref-title {
+  font-size: 125%;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.pref-menulist {
+  margin-left: 6px;
+  margin-right: 6px;
+  min-width: 10em; /* native menulists ellipsize their longest entries by default on many themes */
+}

@@ -1,0 +1,210 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== menu.css =======================================================
+  == Styles used by XUL menu-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: menu/menuitem ::::: */
+
+menu,
+menuitem {
+  -moz-appearance: menuitem;
+  -moz-box-align: center;
+  color: MenuText;
+  font: -moz-pull-down-menu;
+  list-style-image: none;
+  -moz-image-region: auto;
+}
+
+menu[disabled="true"], menuitem[disabled="true"],
+menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: -moz-mac-menutextdisable;
+}
+
+/* ..... internal content .... */
+
+.menu-text,
+.menu-iconic-text {
+  margin: 0px 4px 0px 0px !important;
+  color: inherit;
+}
+
+.menu-text {
+  margin-left: 18px !important;
+  font-weight: inherit;
+}
+
+.menu-description {
+  font-style: italic;
+  color: -moz-mac-menutextdisable;
+  -moz-margin-start: 1ex !important;
+}
+
+.menu-accel,
+.menu-iconic-accel {
+  margin: 0px 2px 0px 2px !important;
+  padding-right: 10px;
+  color: inherit;
+}
+
+.menu-iconic-left {
+  margin: 2px 4px 1px 18px !important;
+  color: inherit;
+}
+
+.menu-iconic-icon {
+  width: 16px;
+  height: 16px;
+  list-style-image: inherit;
+}
+
+menuitem[type="checkbox"] > .menu-iconic-left,
+menuitem[type="radio"] > .menu-iconic-left {
+  margin: 0 2px 0 0 !important;
+ }
+
+/* ..... menu arrow box ..... */
+
+.menu-right {
+  margin: 0px 8px 0px 6px;
+  width: 8px;
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.gif");
+  -moz-image-region: auto;
+}
+
+.menu-right[_moz-menuactive="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow-hov.gif");
+  -moz-image-region: auto;
+}
+
+.menu-right[disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow-dis.gif") !important;
+  -moz-image-region: auto;
+}
+
+/* ::::: menu/menuitems in menubar ::::: */
+
+menubar > menu {
+  -moz-appearance: none !important;
+  padding: 2px 5px 2px 7px;
+  margin: 1px 0px 1px 0px;
+}
+
+menubar > menu[_moz-menuactive="true"][open="true"] {
+  -moz-appearance: menuitem !important;
+  color: -moz-mac-menutextselect !important
+}
+
+/* ..... internal content .... */
+
+.menubar-left {
+  margin: 0px 2px 0px 0px;
+  color: inherit;
+}
+
+.menubar-text {
+  margin: 0px 2px 0px 0px !important;
+  color: inherit;
+}
+
+/* ::::: menu/menuitems in popups ::::: */
+
+menupopup > menu,
+popup > menu,
+menupopup > menuitem,
+popup > menuitem {
+  padding: 0px 3px 2px 3px !important;
+  max-width: 42em;
+  min-height: 19px;
+}
+
+menupopup > menu[_moz-menuactive="true"],
+menupopup > menuitem[_moz-menuactive="true"],
+popup > menu[_moz-menuactive="true"],
+popup > menuitem[_moz-menuactive="true"] {
+  color: -moz-mac-menutextselect;
+  background-color: Highlight;
+}
+
+/* ::::: menu/menuitems in menulist popups ::::: */
+
+.menulist-menupopup > menuitem,
+menulist > menupopup > menuitem,
+.menulist-menupopup > menu,
+menulist > menupopup > menu {
+  padding-right: 25px !important;
+  max-width: none;
+  font: inherit;
+  color: -moz-FieldText;
+}
+
+.menulist-menupopup > menuitem > .menu-iconic-left,
+menulist > menupopup > menuitem > .menu-iconic-left,
+.menulist-menupopup > menu > .menu-iconic-left,
+menulist > menupopup > menu > .menu-iconic-left {
+  margin: 0 2px 0 0 !important;
+}
+
+/* ::::: menuitems in editable menulist popups ::::: */
+
+menulist[editable="true"] > menupopup > menuitem {
+  -moz-appearance: none;
+}
+
+menulist[editable="true"] > menupopup > menuitem > .menu-iconic-left {
+  display: none;
+}
+
+/* ::::: checked menuitems ::::: */
+
+menuitem[checked="true"], 
+menulist > menupopup > menuitem[selected="true"],
+.menulist-menupopup > menuitem[selected="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check.png");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check-dis.png");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][_moz-menuactive="true"]:not([disabled="true"]), 
+menulist > menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]),
+.menulist-menupopup > menuitem[_moz-menuactive="true"][selected="true"]:not([disabled="true"]) {
+  list-style-image: url("chrome://global/skin/menu/menu-check-hov.png") !important;
+  -moz-image-region: auto;
+}
+
+/* ::::: menuseparator ::::: */
+
+menuseparator {
+  -moz-appearance: menuseparator;
+  margin: 5px 0;
+  padding: 1px 0 !important;
+}
+
+/* ::::: menulist popup ::::: */
+menulist > menupopup {
+  margin: 4px 0px 4px 0px;
+}
+
+/* ::::: autocomplete ::::: */
+
+.autocomplete-history-popup > menuitem {
+  max-width: none !important;
+  font: message-box;
+}
+
+/* ::::: tree column picker ::::: */
+
+.treecell-popupcell-menu {
+  margin-left: -2px;
+  list-style-image: url("chrome://global/skin/columnselect.gif");
+  -moz-image-region: auto;
+}

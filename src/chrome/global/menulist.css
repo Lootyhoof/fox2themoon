@@ -1,0 +1,7 @@
+/**
+ * This is used to fix different theme rendering behaviours between Win/Linux and Mac firefox browsers. 
+ * For more informations see http://forums.mozillazine.org/viewtopic.php?f=18&t=906535&start=0
+*/
+
+@import url("chrome://os_target/skin/menulist.css");
+

@@ -16,10 +16,10 @@
       </Description>
     </em:targetApplication>
     <em:description>The default Firefox 2 theme for Pale Moon. Fork of "Firefox 2, the theme, reloaded" by rctgamer3 et al.</em:description>
-    <em:creator>borr</em:creator>
-    <em:developer>fax8</em:developer>
-    <em:developer>rctgamer3</em:developer>
-	<em:developer>Lootyhoof</em:developer>
+    <em:creator>Lootyhoof</em:creator>
+    <em:contributor>fax8</em:contributor>
+    <em:contributor>rctgamer3</em:contributor>
+	<em:contributor>borr</em:contributor>
     <em:internalName>f2tm</em:internalName>
   </Description>
 </RDF>

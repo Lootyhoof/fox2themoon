@@ -9,7 +9,24 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 
+/* Make titlebar text light/dark depending on persona */
+@media all and (-moz-windows-theme: aero), (-moz-windows-glass), all and (-moz-windows-compositor) {
+#main-window[sizemode="normal"]:-moz-lwtheme-brighttext:after{
+    color: white !important;
+	text-shadow: none !important;
+}
+#main-window[sizemode="normal"]:-moz-lwtheme-darktext:after{
+     color: black !important;
+}
+}
 
+#main-window[sizemode="maximized"]:-moz-lwtheme-brighttext:after{
+    color: white !important;
+	text-shadow: none !important;
+}
+#main-window[sizemode="maximized"]:-moz-lwtheme-darktext:after{
+     color: black !important;
+}
 
 #menubar-items {
   -moz-box-orient: vertical; /* for flex hack */
@@ -1196,14 +1213,12 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 .urlbar-history-dropmarker {
   -moz-appearance: none;
   padding: 0;
-  background-color: -moz-dialog !important;
   border: none;
   width: auto;
   outline: 1px solid ThreeDShadow;
 }
 
 .urlbar-history-dropmarker:hover {
-  background-color: -moz-dialog !important;
   -moz-appearance: none;
   -moz-margin-start: 0px !important;
 }
@@ -1695,9 +1710,9 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   outline: 1px solid ButtonShadow !important;
   margin-left: 18px !important;
   margin-right: -38px !important;
-  background-color: -moz-Dialog !important;
   -moz-outline-radius-topright: 3px !important;
   -moz-outline-radius-bottomright: 3px !important;
+  background: -moz-Dialog !important;
 }
 
 #go-button:hover {
@@ -1981,7 +1996,9 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 /* Tabstrip */
 
 #TabsToolbar {
-  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
+  background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
+  max-height: 25px !important;
+  min-height: 25px !important;
 }
 
 
@@ -2052,7 +2069,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 .tabbrowser-tab[selected="true"] {
   margin: 2px 0px 3px;
   padding: 1px;
-  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") repeat-x;
+  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") repeat-x;
   font-weight: bold;
 }
 
@@ -2356,7 +2373,7 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
 .tabbrowser-tabs > .tabs-closebutton {
   margin: 3px 0px 3px;
   padding: 4px 2px 2px;
-  background: -moz-dialog url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png");
+  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png");
   background-repeat: repeat-x;
   border-left: 1px solid threedshadow;
   border-top: 1px solid threedshadow;
@@ -2781,7 +2798,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #TabsToolbar > #tabbrowser-tabs {
   margin-bottom: -4px !important;
 }
-#navigator-toolbox[tabsontop="true"] #TabsToolbar {
+#navigator-toolbox[tabsontop="true"]:not(:-moz-lwtheme) #TabsToolbar {
   border: none !important;
   border-bottom: 4px solid !important;
   -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
@@ -3840,8 +3857,56 @@ chatbox[minimized="true"] {
 /* Persona fixes, still in development.
    not important for now */
 
-.tabbrowser-tab:-moz-lwtheme {
-  color: inherit;
+.tabbrowser-tab:-moz-lwtheme-brighttext {
+  color: white;
+}
+.tabbrowser-tab:-moz-lwtheme-darktext {
+  color: black;
+}
+
+#navigator-toolbox:-moz-lwtheme {
+  background: transparent !important;
+  border: none !important;
+}
+
+#main-window[tabsontop="true"] #nav-bar:-moz-lwtheme {
+  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") !important;
+}
+
+#nav-bar:-moz-lwtheme {
+  border: none !important;
+}
+
+#TabsToolbar:-moz-lwtheme {
+  border-width: 0px !important;
+}
+
+#PersonalToolbar {
+  border: none !important;
+}
+
+#PersonalToolbar .bookmark-item {
+  color: inherit !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0, 1);
+}
+
+#toolbar-menubar:-moz-lwtheme {
+  border: none !important;
+}
+
+#toolbar-menubar menu:-moz-lwtheme-brighttext,
+.tabbrowser-tabs:-moz-lwtheme-brighttext {
+  text-shadow: 1px 1px 2px rgba(0,0,0, 1);
+}
+
+#toolbar-menubar menupopup menu{
+  text-shadow: none !important;
+  }
+
+.tabbrowser-tab:-moz-lwtheme-brighttext {
+  margin-right: 1px !important;
+  -moz-border-right-colors: transparent !important;
+  -moz-border-left-colors: transparent !important;
 }
 /* end of persona fixes */
 
@@ -3871,7 +3936,7 @@ chatbox[minimized="true"] {
   }
 
 /* status and find box MUST be excluded from aero */
-  #browser-bottombox {
+  #browser-bottombox:not(:-moz-lwtheme) {
     -moz-appearance: statusbar !important;
   }
 

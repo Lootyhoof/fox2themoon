@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.0.2
+- persona support
+
 ### 1.0.1
 - add mixed padlock state
 

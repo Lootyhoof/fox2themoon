@@ -1997,8 +1997,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 #TabsToolbar {
   background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
-  max-height: 25px !important;
-  min-height: 25px !important;
+  min-height: 28px !important;
 }
 
 
@@ -2019,6 +2018,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
    thanks patrickjdempsey ! */
 #TabsToolbar > .tabbrowser-tabs {
   margin-bottom: -4px;
+  max-height: 24px !important;
 }
 
 #TabsToolbar #new-tab-button:hover,
@@ -2815,6 +2815,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #FindToolbar:not([hidden="true"]) ~ #addon-bar {
   border-top: 0;
+}
+
+#FindToolbar {
+  color: CaptionText !important;
 }
 
 /* searchbar fix */
@@ -3857,12 +3861,6 @@ chatbox[minimized="true"] {
 /* Persona fixes, still in development.
    not important for now */
 
-.tabbrowser-tab:-moz-lwtheme-brighttext {
-  color: white;
-}
-.tabbrowser-tab:-moz-lwtheme-darktext {
-  color: black;
-}
 
 #navigator-toolbox:-moz-lwtheme {
   background: transparent !important;
@@ -3879,28 +3877,37 @@ chatbox[minimized="true"] {
 
 #TabsToolbar:-moz-lwtheme {
   border-width: 0px !important;
+  min-height: 24px !important;
 }
 
-#PersonalToolbar {
+#PersonalToolbar:-moz-lwtheme {
   border: none !important;
 }
 
-#PersonalToolbar .bookmark-item {
-  color: inherit !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0, 1);
-}
 
 #toolbar-menubar:-moz-lwtheme {
   border: none !important;
 }
 
 #toolbar-menubar menu:-moz-lwtheme-brighttext,
-.tabbrowser-tabs:-moz-lwtheme-brighttext {
+.tabbrowser-tab:-moz-lwtheme-brighttext,
+#PersonalToolbar .bookmark-item:-moz-lwtheme-brighttext,
+#addon-bar:-moz-lwtheme-brighttext {
+  color: inherit;
   text-shadow: 1px 1px 2px rgba(0,0,0, 1);
+}
+
+#toolbar-menubar menu:-moz-lwtheme-darktext,
+.tabbrowser-tab:-moz-lwtheme-darktext,
+#PersonalToolbar .bookmark-item:-moz-lwtheme-darktext,
+#addon-bar:-moz-lwtheme-darktext {
+  color: inherit;
+  text-shadow: 1px 1px 2px rgba(255,255,255, 1);
 }
 
 #toolbar-menubar menupopup menu{
   text-shadow: none !important;
+  color: CaptionText !important;
   }
 
 .tabbrowser-tab:-moz-lwtheme-brighttext {
@@ -3908,6 +3915,7 @@ chatbox[minimized="true"] {
   -moz-border-right-colors: transparent !important;
   -moz-border-left-colors: transparent !important;
 }
+
 /* end of persona fixes */
 
 /* aero fixes, only thing we should use it on is the titlebar (for now) */

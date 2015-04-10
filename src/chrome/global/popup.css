@@ -23,6 +23,10 @@ panel {
   background: Menu;
 }
 
+panel {
+  color: black !important;
+}
+
 menupopup,
 /* auto complete popups don't render well as vista menus */
 popup:not([type="autocomplete"])

@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.0.3
+- persona fix
+
 ### 1.0.2
 - persona support
 

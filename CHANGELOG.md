@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.4
+- persona fix
+- style alltabs popout
+
 ### 1.0.3
 - persona fix
 

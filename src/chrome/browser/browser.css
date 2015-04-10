@@ -2999,7 +2999,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 #FindToolbar {
-  color: CaptionText !important;
+  color: black !important;
 }
 
 /* searchbar fix */
@@ -4050,7 +4050,7 @@ chatbox[minimized="true"] {
 
 #main-window:-moz-lwtheme menupopup menuitem,
 #main-window:-moz-lwtheme menupopup menu{
-color: CaptionText !important;
+color: black !important;
 text-shadow: none !important;
 }
 

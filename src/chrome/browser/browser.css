@@ -2588,8 +2588,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 #identity-popup-content-box.verifiedIdentity > #identity-popup-encryption > vbox > #identity-popup-encryption-icon ,
 #identity-popup-content-box.verifiedDomain > #identity-popup-encryption > vbox > #identity-popup-encryption-icon {
-  list-style-image: url("chrome://browser/skin/Secure.png");
-  -moz-image-region: rect(0px, 18px, 18px, 0px);
+  list-style-image: url("chrome://browser/skin/Secure24.png");
 }
 
 .popup-notification-icon {
@@ -4104,6 +4103,12 @@ text-shadow: none !important;
   -moz-border-top-colors: transparent !important;
   background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") !important;
 }  
+
+#main-window[sizemode="maximized"] #titlebar:-moz-lwtheme {
+ -moz-appearance: none;   
+ background: transparent;
+ padding-top: 3px;
+}
 
 /* end of persona fixes */
 

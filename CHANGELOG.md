@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.5
+- WinXP fixes
+- use large secure icon on identity popup
+
 ### 1.0.4
 - persona fix
 - style alltabs popout

@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.1.0
+- Pale Moon v26 compatibility
+- fix window borders on Windows 10
+
 ### 1.0.5
 - WinXP fixes
 - use large secure icon on identity popup

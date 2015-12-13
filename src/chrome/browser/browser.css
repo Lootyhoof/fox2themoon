@@ -1204,6 +1204,8 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 
 .urlbar-history-dropmarker {
   -moz-appearance: none;
+  background: -moz-dialog url("chrome://global/skin/icons/autocomplete-dropmark-bkgnd.png");
+  background-position: 0 0;
   padding: 0;
   border: none;
   width: auto;
@@ -1213,15 +1215,25 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 .urlbar-history-dropmarker:hover {
   -moz-appearance: none;
   -moz-margin-start: 0px !important;
+  background-position: -16px 0px;
+}
+
+.urlbar-history-dropmarker:hover:active {
+  background-position: -48px 0px;
 }
 
 .urlbar-history-dropmarker > .dropmarker-icon {
-  -moz-margin-start: 6px;
-  -moz-margin-end: 5px;
+  margin: 0;
+  list-style-image: url("chrome://global/skin/icons/autocomplete-dropmark-arrow.png");
+  -moz-image-region: rect(0px, 16px, 20px, 0px);
 }
 
 .urlbar-history-dropmarker:hover > .dropmarker-icon {
-  -moz-margin-start: 6px;
+  -moz-image-region: rect(0px, 32px, 20px, 16px);
+}
+
+.urlbar-history-dropmarker:hover:active > .dropmarker-icon {
+  -moz-image-region: rect(0px, 64px, 20px, 48px);
 }
 
 /* page proxy icon */
@@ -1710,19 +1722,23 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   margin-right: -38px !important;
   -moz-outline-radius-topright: 3px !important;
   -moz-outline-radius-bottomright: 3px !important;
-  background: -moz-Dialog !important;
+  background: -moz-Dialog url("chrome://browser/skin/Go-bkgnd.png") !important;
+  background-position: -1px -1px !important;
 }
 
 #go-button:hover {
   -moz-image-region: rect(0px 22px 13px 11px);
+  background-position: -26px -1px;
 }
 
 #go-button:hover:active {
   -moz-image-region: rect(0px 44px 13px 33px);
+  background-position: -76px -1px;
 }
 
 #go-button[disabled="true"] {
   -moz-image-region: rect(0px 33px 13px 22px);
+  background-position: -51px -1px;
 }
 
 #go-button:-moz-locale-dir(rtl) {

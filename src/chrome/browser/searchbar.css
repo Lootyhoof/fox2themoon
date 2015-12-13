@@ -35,7 +35,8 @@
   padding: 2px 0;
   border: 0;
   -moz-box-align: center;
-  background-color: -moz-dialog;
+  background: -moz-dialog url("chrome://browser/skin/Search-provider-bkgnd.png");
+  background-position: -1px -1px;
   outline: 1px solid ThreeDShadow;
   -moz-margin-start: -1px;
   -moz-outline-radius-topleft: 2px;
@@ -51,6 +52,11 @@
 
 .searchbar-engine-button:hover {
   outline-color: ThreeDDarkShadow;
+  background-position: -33px -1px;
+}
+
+.searchbar-engine-button[open="true"] {
+  background-position: -65px -1px;
 }
 
 .searchbar-engine-button > .button-box {
@@ -60,13 +66,9 @@
   border: 0;
 }
 
-/* blue hallo */
-.searchbar-engine-button[addengines="true"] > .button-box {
-  background: transparent url("chrome://browser/skin/Search-addengines.png") no-repeat right center;
-}
-
-.searchbar-engine-button:-moz-locale-dir(rtl)[addengines="true"] {
-  background-position: left center;
+/* blue glow */
+.searchbar-engine-button[addengines="true"] {
+  background-position: -95px -1px;
 }
 
 .searchbar-dropmarker-image {
@@ -84,7 +86,8 @@
   list-style-image: url("chrome://browser/skin/Search-glass.png");
   -moz-image-region: rect(3px 20px 19px 4px);
   outline: 1px solid ButtonShadow !important;
-  background-color: -moz-Dialog !important;
+  background: -moz-Dialog url("chrome://browser/skin/Search-bkgnd.png") !important;
+  background-position: 0 -1px !important;
   -moz-outline-radius-topright: 3px !important;
   -moz-outline-radius-bottomright: 3px !important;
   padding: 2px 4px 2px 4px; /* not sure if this is correct - it may cause other problems */
@@ -96,14 +99,17 @@
 
 .search-go-button:hover {
   -moz-image-region: rect(3px 45px 19px 29px);
+  background-position: -24px -1px;
 }
 
 .search-go-button[disabled="true"] {
   -moz-image-region: rect(3px, 70px, 19px, 54px);
+  background-position: -50px -1px;
 }
 
 .search-go-button:hover:active {
   -moz-image-region: rect(3px, 95px, 19px, 79px);
+  background-position: -75px -1px;
 }
 
 .searchbar-engine-menuitem[selected="true"] > .menu-iconic-text {

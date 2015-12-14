@@ -2010,29 +2010,20 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 /* Tabstrip */
 
 #TabsToolbar {
+  -moz-appearance: none;
   background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
-  min-height: 28px !important;
+  border-top: none;
 }
 
-
-/* reproduce line at the top of .tabs-bottom for tabs-on-top mode */
-#navigator-toolbox[tabsontop="true"] #TabsToolbar {
-  border: none;
-  border-bottom: 1px solid ThreeDShadow;
-}
-
-/* reproduces .tabs-bottom at the bottom of #TabsToolbar for tabs-on-bottom mode */
-#navigator-toolbox[tabsontop="false"] #TabsToolbar {
-  border: none;
+#TabsToolbar[tabsontop=false]:not(:-moz-lwtheme) {
   border-bottom: 4px solid;
-  -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
+  -moz-border-bottom-colors: ThreeDShadow -moz-Dialog -moz-Dialog ThreeDShadow;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
-/* pulls tabs down to eliminate the effect of their bottom margins in 4.0.
-   thanks patrickjdempsey ! */
-#TabsToolbar > .tabbrowser-tabs {
-  margin-bottom: -4px;
-  max-height: 24px !important;
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
+  border-bottom: 1px solid ThreeDShadow;
 }
 
 #TabsToolbar #new-tab-button:hover,
@@ -2042,20 +2033,25 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   padding-right: 6px;
 }
 
+.tabbrowser-tabs {
+  max-height: 26px;
+  margin-bottom: -1px;
+}
+
 .tabbrowser-tabs:not([overflow="true"]) {
   -moz-padding-start: 3px;
 }
 
 .tabbrowser-tab {
   -moz-appearance: none;
-  background: url("chrome://browser/skin/tabbrowser/tab-bkgnd.png") repeat-x;
-  margin: 3px 0px 4px;
+  background: url("chrome://browser/skin/tabbrowser/tab-middle-bkgnd.png") 0px -2px repeat-x;
+  margin: 2px 0px 0px;
   padding: 0px 1px 1px 0px;
   border: 2px solid;
   border-right-width: 1px;
   border-bottom: none;
-  border-top-left-radius: 4px; /* like in firefox 2 */
-  border-top-right-radius: 4px;
+  border-top-left-radius: 3px; /* like in firefox 2 */
+  border-top-right-radius: 3px;
   /* we need to add bottom radii, they appear to be rounded if we don't */
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -2067,24 +2063,23 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 .tabbrowser-tab:hover,
 .tabbrowser-tab[selected="true"] {
   border-width: 1px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  padding: 0 1px;
   -moz-border-top-colors: ThreeDShadow;
   -moz-border-right-colors: ThreeDShadow;
   -moz-border-left-colors: ThreeDShadow;
 }
 
 .tabbrowser-tab:not([selected="true"]):hover {
-  margin: 2px 0px 4px;
-  padding: 2px 1px 1px;
-  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") repeat-x !important;
+  background: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x !important;
 }
 
 .tabbrowser-tab[selected="true"] {
-  margin: 2px 0px 3px;
-  padding: 1px;
-  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png") repeat-x;
+  background: url("chrome://browser/skin/tabbrowser/tab-middle.png") 0px -2px repeat-x;
   font-weight: bold;
+}
+
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) {
+  background-color: -moz-dialog;
 }
 
 .tabbrowser-tab[busy] > .tab-icon-image {
@@ -2841,19 +2836,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #BMB_unsortedBookmarks {
   list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png");
   -moz-image-region: auto;
-}
-
-/* TabsOnTop fixes */
-#TabsToolbar:not([tabsontop=true]) > #tabbrowser-tabs {
-  margin-bottom: -4px !important;
-}
-#TabsToolbar > #tabbrowser-tabs {
-  margin-bottom: -4px !important;
-}
-#navigator-toolbox[tabsontop="true"]:not(:-moz-lwtheme) #TabsToolbar {
-  border: none !important;
-  border-bottom: 4px solid !important;
-  -moz-border-bottom-colors: ThreeDShadow -moz-dialog -moz-dialog ThreeDShadow !important;
 }
 
 /* ::::: Keyboard UI Panel ::::: */

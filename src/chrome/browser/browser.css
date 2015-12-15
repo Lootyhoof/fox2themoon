@@ -2182,7 +2182,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down,
-#alltabs-button[type="menu"] {
+#TabsToolbar .tabs-alltabs-button {
   -moz-appearance: none;
   width: 18px;
   margin: 3px 0px 4px;
@@ -2200,7 +2200,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover,
 .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):hover,
-#alltabs-button[type="menu"]:hover {
+#TabsToolbar .tabs-alltabs-button:hover {
   border-top-width: 1px;
   padding-top: 1px;
   -moz-border-top-colors: ThreeDShadow;
@@ -2244,7 +2244,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-down,
-#alltabs-button[type="menu"] {
+#TabsToolbar .tabs-alltabs-button {
   border-right-style: none;
   border-top-left-radius: 2px;
 }
@@ -2254,7 +2254,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-locale-dir(rtl),
-.tabbrowser-tabs > stack:-moz-locale-dir(rtl) > #alltabs-button[type="menu"] {
+.tabbrowser-tabs > stack:-moz-locale-dir(rtl) > .tabs-alltabs-button {
   border-left-style: none;
   border-right-style: solid;
   border-top-left-radius: 0px;
@@ -2270,23 +2270,14 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   -moz-margin-end: 2px;
 }
 
-/* alltabs button fix */
-#alltabs-button {
-  background-image: none !important;
-}  
-
-#alltabs-button[type="menu"] {
-  margin: 3px 0px -4px 0px;
+#TabsToolbar .tabs-alltabs-button {
+  margin: 2px 0 0;
   padding: 4px 0px 5px 0px;
 }
 
-#alltabs-button[type="menu"]:hover {
-  margin-top: 4px;
-  padding-top: 5px;
-}
-
-#alltabs-button:not([type="menu"]) {
-  margin-top: 6px;
+#TabsToolbar .tabs-alltabs-button:hover {
+  margin: 2px 0 0;
+  padding: 5px 0px 5px 0px;
 }
 
 /* Tabs Scrollbar up fix, should fix properly sometime soon */
@@ -2304,7 +2295,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 /* scrollbutton down & alltabs */
 .tabbrowser-arrowscrollbox > .scrollbutton-down,
-#TabsToolbar[tabsontop=true] > #alltabs-button[type="menu"] {
+#TabsToolbar[tabsontop=true] #alltabs-button {
   border-right-style: solid !important;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
@@ -2365,17 +2356,17 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
   -moz-image-region: rect(0, 28px, 20px, 14px);
 }
 
-#alltabs-button[type="menu"] {
+#TabsToolbar .tabs-alltabs-button {
   list-style-image: url("chrome://browser/skin/mainwindow-dropdown-arrow.png");
   -moz-image-region: rect(0, 13px, 11px, 0);
 }
 
-#alltabs-button[type="menu"]:hover > .toolbarbutton-icon,
-#alltabs-button[type="menu"][open="true"] > .toolbarbutton-icon {
--moz-image-region: rect(0, 26px, 11px, 13px);
+#TabsToolbar .tabs-alltabs-button:hover > .toolbarbutton-icon,
+#TabsToolbar .tabs-alltabs-button[open="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(0, 26px, 11px, 13px);
 }
 
-#alltabs-button[type="menu"] > .toolbarbutton-menu-dropmarker {
+#TabsToolbar .tabs-alltabs-button > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 

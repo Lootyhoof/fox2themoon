@@ -2540,7 +2540,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .identity-popup-description,
 #identity-popup-encryption-label {
   white-space: pre-wrap;
-  color: black;
   -moz-padding-start: 15px;
   margin: 2px 0 4px;
 }

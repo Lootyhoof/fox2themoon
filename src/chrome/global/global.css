@@ -110,6 +110,13 @@ statusbarpanel {
   padding: 0 4px;
 }
 
+statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
+  -moz-appearance: none;
+  border-top-style: none;
+  border-bottom-style: none;
+  -moz-border-start-style: none;
+}
+
 .statusbar-resizerpanel {
   -moz-box-align: end;
   -moz-box-pack: end;
@@ -147,6 +154,33 @@ sidebarheader > label {
 
 .toolbar-focustarget {
   -moz-user-focus: ignore !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 3px 5px !important;
+}
+
+/* ::::: miscellaneous formatting ::::: */
+
+:root:-moz-lwtheme,
+[lwthemefooter="true"] {
+  -moz-appearance: none;
+}
+
+:root:-moz-lwtheme-darktext {
+  text-shadow: 0 -0.5px 1.5px white;
+}
+
+:root:-moz-lwtheme-brighttext {
+  text-shadow: 1px 1px 1.5px black;
+}
+
+statusbar:-moz-lwtheme,
+sidebarheader:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-style: none;
 }
 
 /* inset areas */

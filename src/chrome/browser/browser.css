@@ -552,6 +552,10 @@ menuitem.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
+.toolbarbutton-1[type="menu"] {
+  -moz-box-orient: horizontal;
+}
+
 toolbar[mode="full"] .toolbarbutton-1,
 toolbar[mode="full"] .toolbarbutton-menubutton-button {
   min-width: 57px;

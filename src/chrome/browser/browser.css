@@ -771,7 +771,7 @@ toolbar[mode="full"] .toolbarbutton-menubutton-button {
 /* history sidebar & menu buttons */
 
 #history-button,
-#history-button {
+#history-menu-button {
   -moz-image-region: rect(0px 168px 24px 144px);
 }
 #history-button:not([disabled="true"]):not([checked="true"]):hover,

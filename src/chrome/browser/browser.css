@@ -1145,18 +1145,10 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 /* identity box */
 
 #identity-box {
-  background-color: transparent !important; /* white bg even in luna-theme */
-  /*-moz-appearance: toolbox;*/
   outline: 1px solid transparent;
-  /*-moz-margin-start: -1px;*/
   /* currently, the identity box is always LTR */
   -moz-outline-radius-topleft: 2px;
   -moz-outline-radius-bottomleft: 2px;
-}
-
-/* notification popup bg, doesn't display properly on dark themes such as Ambiance (Ubuntu) */
-#notification-popup {
-  background: -moz-dialog;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
@@ -2805,8 +2797,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 /* Popup Bounding Box */
 #identity-popup-container {
-  background-image: none;
-  background-color: white;
   min-width: 280px;
   padding: 10px;
 }

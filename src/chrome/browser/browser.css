@@ -2018,6 +2018,10 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border-bottom: 1px solid ThreeDShadow;
 }
 
+#main-window[tabsontop=true] #nav-bar:not(:-moz-lwtheme) {
+  border-top: none;
+}
+
 #TabsToolbar #new-tab-button:hover,
 #TabsToolbar #new-tab-button:hover:active {
   -moz-image-region: rect(0, 35px, 18px, 17px);

@@ -552,7 +552,7 @@ menuitem.bookmark-item {
   list-style-image: url("chrome://browser/skin/Toolbar.png");
 }
 
-.toolbarbutton-1[type="menu"] {
+.toolbarbutton-1[type="menu"]:not(:-moz-any(#back-button, #forward-button)) {
   -moz-box-orient: horizontal;
 }
 

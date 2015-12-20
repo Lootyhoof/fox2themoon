@@ -1213,7 +1213,7 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 
 .urlbar-history-dropmarker {
   -moz-appearance: none;
-  background: -moz-dialog url("chrome://global/skin/icons/autocomplete-dropmark-bkgnd.png");
+  background: -moz-dialog url("chrome://browser/skin/autocomplete-dropmark-bkgnd.png");
   background-position: 0 0;
   padding: 0;
   border: none;
@@ -1233,7 +1233,7 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 
 .urlbar-history-dropmarker > .dropmarker-icon {
   margin: 0;
-  list-style-image: url("chrome://global/skin/icons/autocomplete-dropmark-arrow.png");
+  list-style-image: url("chrome://browser/skin/autocomplete-dropmark-arrow.png");
   -moz-image-region: rect(0px, 16px, 20px, 0px);
 }
 

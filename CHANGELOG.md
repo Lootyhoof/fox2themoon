@@ -1,5 +1,20 @@
 # Changelog
 
+### 2.0.0
+- (PM26) add history menu button
+- show more icons in history/bookmarks menus
+- make search buttons more FF2-like
+- make go-button more FF2-like
+- use FF2 background images for search buttons and urlbar buttons
+- use FF2 urlbar history dropmarker
+- make tabs more FF2-like
+- use tab background images from FF2
+- make alltabs button more FF2-like
+- implement doorhanger popups
+- improve tab styling for tabs-on-top
+- fix menubutton dropmarker positions
+- remove double padlocks
+
 ## 1.1.1
 - (Win10) shade window background on Pale Moon 26 builds later than b2
 

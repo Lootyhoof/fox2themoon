@@ -1273,22 +1273,6 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
   -moz-image-region: rect(32px, 16px, 48px, 0px) !important;
 }
 
-#identity-box.verifiedDomain #page-proxy-favicon[pageproxystate="valid"]:not([src]),
-#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]){
-  list-style-image: url(chrome://browser/skin/identity-icons-https.png) !important;
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-#identity-box.verifiedDomain  #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover,
-#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-#identity-box.verifiedDomain #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover:active,
-#identity-box.verifiedIdentity #page-proxy-favicon[pageproxystate="valid"]:not([src]):hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
 /* ::::: 16px primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] .toolbarbutton-1 {

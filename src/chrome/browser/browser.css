@@ -4159,6 +4159,25 @@ text-shadow: none !important;
 	-moz-image-region:rect(0px, 32px, 16px, 16px) !important;
 }
 
+/* Tab Utilities */
+#tabbrowser-tabs[multirow=true] .tabbrowser-tab {
+  padding: 1px !important;
+}
+
+#tabbrowser-tabs[multirow=true] .tabbrowser-tab:hover .tab-content,
+#tabbrowser-tabs[multirow=true] .tabbrowser-tab[selected=true] .tab-content {
+  padding: 1px 1px 0 1px !important;
+}
+
+#tabbrowser-tabs[multirow=true] .tabs-newtab-button {
+  padding-top: 3px !important;
+}
+
+#tabbrowser-tabs[multirow=true] .tabs-newtab-button:hover,
+#tabbrowser-tabs[multirow=true] .tabs-newtab-button:hover:active {
+  padding-top: 4px !important;
+}
+
 /* Adblock Plus close button */
 #abp-bottombar-close,
 .abp-contributebutton-close,

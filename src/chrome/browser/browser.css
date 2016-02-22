@@ -4159,6 +4159,15 @@ text-shadow: none !important;
 	-moz-image-region:rect(0px, 32px, 16px, 16px) !important;
 }
 
+#tabbrowser-tabs[tabmix_firefox3] .tabbrowser-tab {
+  padding: 1px 0 0 0 !important;
+}
+
+#tabbrowser-tabs[tabmix_firefox3] .tabbrowser-tab:hover .tab-content,
+#tabbrowser-tabs[tabmix_firefox3] .tabbrowser-tab[selected=true] .tab-content {
+  padding: 1px 0px 0px 1px !important;
+}
+
 /* Tab Utilities */
 #tabbrowser-tabs[multirow=true] .tabbrowser-tab {
   padding: 1px !important;

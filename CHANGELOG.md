@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.2
+- improve compatibility with multi-row tabbar extensions
+- improve tab appearances in Tab Utilities and TabMixPlus extensions
+
 ### 2.0.1
 - (PM26) add download location styling
 

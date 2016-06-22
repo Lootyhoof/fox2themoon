@@ -1870,20 +1870,10 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 .panel-promo-closebutton {
   -moz-appearance: none;
-  list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-image-region: rect(0, 64px, 16px, 48px);
   border: none;
   padding: 0px;
 }
-
-.panel-promo-closebutton:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-.panel-promo-closebutton:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
 
 /* ::::: content area ::::: */
 
@@ -1986,9 +1976,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 #addonbar-closebutton {
   border: none;
   padding: 0 5px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-appearance: none;
-  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 #addonbar-closebutton:hover {
@@ -2120,25 +2108,16 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 .tab-close-button {
   -moz-appearance: none;
-  -moz-image-region: rect(0, 64px, 16px, 48px);
   -moz-margin-end: 6px;
   border: none;
   padding: 0px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
 }
 
-.tab-close-button:hover,
-.tab-close-button:hover[selected="true"] {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-.tab-close-button:hover:active,
-.tab-close-button:hover:active[selected="true"] {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+.tab-close-button:not([selected]):not(:hover):not(:active) {
+  -moz-image-region: rect(0, 64px, 16px, 48px);
 }
 
 .tab-close-button[selected="true"] {
-  -moz-image-region: rect(0, 16px, 16px, 0);
   /* Make this button focusable so clicking on it will not focus the tab while
      it's getting closed */
   -moz-user-focus: normal !important;
@@ -2383,8 +2362,6 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
 /* Tabstrip close button */
 .tabs-closebutton {
   -moz-appearance: none;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
   padding: 4px 2px;
   margin: 0px;
   border: none;
@@ -2394,14 +2371,6 @@ stack:-moz-locale-dir(rtl) > hbox > .tabs-alltabs-box-animate {
   -moz-margin-end: 0px !important;
   -moz-padding-end: 2px !important;
   -moz-padding-start: 2px !important;
-}
-
-.tabs-closebutton:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-.tabs-closebutton:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 .tabbrowser-tabs > .tabs-closebutton {
@@ -3020,17 +2989,11 @@ statusbarpanel#statusbar-display {
 #addonbar-closebutton {
   border: none;
   padding: 3px 2px 4px 2px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
   -moz-appearance: none;
+}
+
+#addonbar-closebutton:not(:hover):not(:active) {
   -moz-image-region: rect(0, 64px, 16px, 48px);
-}
-
-#addonbar-closebutton:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-#addonbar-closebutton:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 #addonbar-closebutton:focus {

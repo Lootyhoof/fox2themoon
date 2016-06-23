@@ -17,26 +17,11 @@ toolbox {
   -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
 }
 
-@media all and (-moz-windows-compositor) {
-#navigator-toolbox {
-  border-top: 2px solid !important;
-  -moz-border-top-colors: ThreeDShadow ThreeDHighlight !important;
-}
-
-toolbox {
-  -moz-appearance: none !important;
-  background-color: -moz-Dialog !important;
-  border-top: 1px solid !important;
-  -moz-border-top-colors: ThreeDHighlight !important;
-  }
-}
-
-
 /* ::::: toolbar & menubar ::::: */
 
-/*toolbar, menubar {
+toolbar, menubar {
   -moz-appearance: toolbar;
-}*/
+}
 
 toolbar {
   min-width: 1px;

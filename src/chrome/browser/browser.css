@@ -21,6 +21,63 @@
   border-top: none;
 }
 
+#navigator-toolbox {
+  -moz-appearance: none;
+  background-color: transparent;
+  border-top: none;
+}
+
+#navigator-toolbox > toolbar:not(:-moz-lwtheme) {
+  -moz-appearance: none;
+  background-color: -moz-Dialog;
+}
+
+@media all and (-moz-windows-compositor) {
+  #main-window:not([tabsintitlebar]) #navigator-toolbox {
+    border-top: 2px solid;
+    -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
+  }
+}
+
+@media not all and (-moz-windows-compositor) {
+  #main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
+    background: -moz-linear-gradient(bottom, rgba(10%,10%,10%,.4) 1px, transparent 1px),
+                -moz-linear-gradient(rgba(50%,50%,50%,0), ActiveCaption 85%);
+    color: CaptionText;
+  }
+  #main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
+    background: -moz-linear-gradient(bottom, rgba(10%,10%,10%,.4) 1px, transparent 1px),
+                -moz-linear-gradient(rgba(50%,50%,50%,0), InactiveCaption 85%);
+    color: InactiveCaptionText;
+  }
+  
+  #main-window[tabsintitlebar] #titlebar:-moz-lwtheme {
+    visibility: hidden;
+  }
+  #main-window[tabsintitlebar] #titlebar-content:-moz-lwtheme {
+    -moz-binding: url("chrome://global/content/bindings/general.xml#windowdragbox");
+    visibility: visible;
+  }
+}
+
+#main-window[inFullscreen] #TabsToolbar,
+#main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar {
+  padding-top: 0px;
+}
+
+#main-window[tabsintitlebar] .tabbrowser-tab,
+#main-window[tabsintitlebar] .tabs-newtab-button,
+#main-window[tabsintitlebar] .tabs-alltabs-button,
+#main-window[inFullscreen] .tabbrowser-tab,
+#main-window[inFullscreen] .tabs-newtab-button,
+#main-window[inFullscreen] .tabs-alltabs-button {
+  margin-top: 0px;
+}
+
+#main-window[inFullscreen] #TabsToolbar {
+  margin-top: -3px;
+}
+
 /* #go-button position fixes */
 #navigator-toolbox[customizing] #urlbar {
 margin-right: 26px !important;
@@ -1991,7 +2048,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 #TabsToolbar {
   -moz-appearance: none;
-  background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x !important;
+  background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x;
   border-top: none;
 }
 
@@ -2004,6 +2061,10 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
   border-bottom: 1px solid ThreeDShadow;
+}
+
+#main-window[tabsintitlebar] #TabsToolbar:not(:-moz-lwtheme) {
+  background: transparent !important;
 }
 
 #main-window[tabsontop=true] #nav-bar:not(:-moz-lwtheme) {
@@ -2023,6 +2084,12 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 .tabbrowser-tabs:not([overflow="true"]) {
   -moz-padding-start: 3px;
+}
+
+#main-window[tabsintitlebar] .tabbrowser-tab:not(:-moz-lwtheme),
+#main-window[tabsintitlebar] .tabbrowser-tab:hover:not(:-moz-lwtheme),
+#main-window[tabsintitlebar] .tabs-alltabs-button:not(:-moz-lwtheme) {
+  background-color: -moz-dialog !important;
 }
 
 .tabbrowser-tab {
@@ -2053,7 +2120,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-tab:not([selected="true"]):hover {
-  background: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x !important;
+  background: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x;
 }
 
 .tabbrowser-tab[selected="true"] {
@@ -4308,6 +4375,34 @@ text-shadow: none !important;
 
     #appmenu-button {
       margin-bottom: -1px; 
+    }
+  }
+  
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7) {
+    /* Make the menu toolbar and tabs toolbar transparent in Aero+glass IIF tabs are on top and menu toolbar is autohidden */
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"],
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"],
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"] ~ #TabsToolbar {
+      background: transparent;
+      /* Give text an aura to make it more readable on glass */
+      text-shadow: 0 0 .5em white, 0 0 .5em white, 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
+    }
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"] #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      background-color: rgba(255,255,255,.5);
+      border-radius: 4px;
+    }
+  }
+  
+  @media (-moz-os-version: windows-win8),
+         (-moz-os-version: windows-win10) {
+    /* Make the menu toolbar and tabs toolbar transparent in Aero+glass IIF tabs are on top and menu toolbar is autohidden */
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"],
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"],
+    #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"] ~ #TabsToolbar {
+      background: transparent;
+      /* Use a light text color rather than fog on Win8/10 */
+      color: white;
     }
   }
     

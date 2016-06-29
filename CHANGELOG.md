@@ -1,5 +1,12 @@
 # Changelog
 
+### 2.1.0
+- titlebar colorisation for Windows 10
+- use dark window frame detection on Windows 8/10
+- refactor media controls for Pale Moon 26.3
+- use unified close button icons
+- use dark toolbar detection in Pale Moon 26.3 to detect dark system themes
+
 ### 2.0.2
 - improve compatibility with multi-row tabbar extensions
 - improve tab appearances in Tab Utilities and TabMixPlus extensions

@@ -9,16 +9,17 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{bbee9373-4135-47cb-b98e-98e62085837f}</em:id>
-    <em:version>2.1.0</em:version>
+    <em:version>2.2.0</em:version>
     <em:name>Fox 2 The Moon</em:name>
     <em:description>The default Firefox 2 theme for Pale Moon. Fork of "Firefox 2, the theme, reloaded" by rctgamer3 et al.</em:description>
     <em:creator>Lootyhoof</em:creator>
     <em:type>4</em:type>
     <em:internalName>f2tm</em:internalName>
+    <em:skinnable>true</em:skinnable>
 
     <em:contributor>fax8</em:contributor>
     <em:contributor>rctgamer3</em:contributor>
-	<em:contributor>borr</em:contributor>
+    <em:contributor>borr</em:contributor>
     <em:contributor>Graciliano (Win10 caption buttons)</em:contributor>
 
     <em:targetApplication>

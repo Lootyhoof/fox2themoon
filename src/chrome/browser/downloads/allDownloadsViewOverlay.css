@@ -2,10 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#contentAreaDownloadsView {
-  background-color: ThreeDFace;
-}
-
 #downloadsRichListBox {
   /** The default listbox appearance comes with an unwanted margin. **/
   -moz-appearance: none;
@@ -18,6 +14,8 @@
 }
 
 .downloadTypeIcon {
+  -moz-margin-end: 8px;
+  -moz-margin-start: 8px;
   /* explicitly size the icon, so size doesn't vary on hidpi systems */
   height: 32px;
   width: 32px;
@@ -49,11 +47,10 @@ richlistitem[type="download"][alternate="true"]:not([selected="true"]) {
   -moz-appearance: none;
   background: transparent;
   min-width: 0;
-  min-height: 19px;
-  margin: 0;
+  min-height: 0;
+  margin: 3px;
   border: none;
-  padding: 0;
-  margin-top: 5px;
+  padding: 5px;
   list-style-image: url("chrome://mozapps/skin/downloads/buttons.png");
 }
 
@@ -72,15 +69,7 @@ richlistitem[type="download"][alternate="true"]:not([selected="true"]) {
 }
 
 .downloadButton.downloadShow {
-list-style-image: url("chrome://global/skin/icons/folder-item.png");
--moz-image-region: rect(0px, 32px, 16px, 16px);
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-.downloadButton.downloadRetry {
-  -moz-image-region: rect(0px, 64px, 16px, 48px);
-}
-
-
-#searchbox[empty] {
-  color: GrayText;
-}

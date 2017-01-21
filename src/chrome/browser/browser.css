@@ -2176,11 +2176,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 /* pinned tab doesn't display correctly when in overflow mode */
 .tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] {
-  padding-bottom: 3px;
-}
-
-.tabbrowser-tabs[overflow] .tabbrowser-tab[pinned][selected] .tab-icon-image {
-  margin-bottom: -2px;
+  padding-bottom: 1px;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up,

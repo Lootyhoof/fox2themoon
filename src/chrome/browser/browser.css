@@ -2061,7 +2061,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   margin: 2px 0px 0px;
   padding: 0px 1px 1px 0px;
   border: 2px solid;
-  border-right-width: 1px;
+  border-width: 1px;
   border-bottom: none;
   border-top-left-radius: 3px; /* like in firefox 2 */
   border-top-right-radius: 3px;
@@ -2069,14 +2069,12 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
-  -moz-border-right-colors: rgba(0,0,0,.1);
+  -moz-border-right-colors: rgba(0,0,0,.1) transparent;
   -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);
 }
 
 .tabbrowser-tab:hover,
 .tabbrowser-tab[selected="true"] {
-  border-width: 1px;
-  padding: 0 1px;
   -moz-border-top-colors: ThreeDShadow;
   -moz-border-right-colors: ThreeDShadow;
   -moz-border-left-colors: ThreeDShadow;
@@ -2189,29 +2187,8 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 #TabsToolbar .tabs-alltabs-button {
   -moz-appearance: none;
   width: 18px;
-  margin: 3px 0px 4px;
   padding: 0px;
-  border: 2px solid;
-  border-right-width: 1px;
-  border-bottom: none;
-  -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
-  -moz-border-right-colors: ThreeDShadow;
-  -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);
-  background: url("chrome://browser/skin/tabbrowser/tab-bkgnd.png") !important;
-  background-repeat: repeat-x;
   -moz-image-region: rect(0, 11px, 14px, 0);
-}
-
-.tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover,
-.tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]):hover,
-#TabsToolbar .tabs-alltabs-button:hover {
-  border-top-width: 1px;
-  padding-top: 1px;
-  -moz-border-top-colors: ThreeDShadow;
-  -moz-border-right-colors: ThreeDShadow;
-  -moz-border-left-colors: ThreeDShadow transparent;
-  background: url("chrome://browser/skin/tabbrowser/tab-active-bkgnd.png");
-  background-repeat: repeat-x;
 }
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]):hover,
@@ -2283,33 +2260,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   margin: 2px 0 0;
   padding: 5px 0px 5px 0px;
 }
-
-/* Tabs Scrollbar up fix, should fix properly sometime soon */
-.tabbrowser-arrowscrollbox > .scrollbutton-up {
-  border-left-style: solid;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.tabbrowser-arrowscrollbox > .scrollbutton-up > .toolbarbutton-icon {
-  margin: 6px 2px 0px 2px;
-}
-
-/* ^ left border becomes activated even when first in the tabs toolbar,
-   but it should be when an app tab is there, should fix sometime soon [minor] */
-
-/* scrollbutton down & alltabs */
-.tabbrowser-arrowscrollbox > .scrollbutton-down,
-#TabsToolbar[tabsontop=true] #alltabs-button {
-  border-right-style: solid !important;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.tabbrowser-arrowscrollbox > .scrollbutton-down > .toolbarbutton-icon {
-  margin: 6px 3px 0px 2px !important;
-/* margin 6px 4px/3px 0px 2px ? */
-}
-
 
 /* newtab on tabstrip  - plus button*/
 #TabsToolbar #new-tab-button {

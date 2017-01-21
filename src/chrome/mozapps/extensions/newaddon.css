@@ -2,29 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* removed the inContentUI import here, because we don't want to use those styles. */
-
-/* Page background */
-:root {
-  padding: 0 1em;
-  color: -moz-dialogText;
-  background-color: -moz-Dialog;
-  font: message-box;
-}
-
-/* Content */
-.main-content {
-  color: -moz-FieldText;
-  position: relative;
-  min-width: 330px;
-  max-width: 50em;
-  margin: 4em auto;
-  border: 1px solid ThreeDShadow;
-  border-radius: 10px;
-  padding: 3em;
-  -moz-padding-start: 30px;
-  background: -moz-Field;
-}
+@import url("chrome://global/skin/inContentUI.css");
 
 #addon-page {
   padding: 0;
@@ -99,7 +77,7 @@
 #warning-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/alerticon-warning.png");
   width: 16px;
-  height: 16px;
+  height: 15px;
   -moz-margin-end: 5px;
 }
 

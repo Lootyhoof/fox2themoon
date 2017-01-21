@@ -6,7 +6,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-
 .nav-button {
   list-style-image: url(chrome://mozapps/skin/extensions/navigation.png);
 }
@@ -181,14 +180,17 @@
   overflow: hidden;
 }
 
-.category:-moz-locale-dir(ltr) {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
+@media (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  .category:-moz-locale-dir(ltr) {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 
-.category:-moz-locale-dir(rtl) {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  .category:-moz-locale-dir(rtl) {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }
 
 .category[disabled] {
@@ -260,7 +262,7 @@
   list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png");
 }
 #category-service > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/category-service.png");
 }
 #category-theme > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-themes.png");
@@ -299,10 +301,16 @@
   #header-search {
     -moz-appearance: none;
     border: 1px solid rgba(0, 0, 0, 0.32);
-    border-radius: 2.5px;
     padding-bottom: 2px;
     background-color: rgba(255, 255, 255, 0.4);
   }
+
+@media (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  #header-search {
+    border-radius: 2.5px;
+  }
+}
 
   #header-search:hover {
     background-color: rgba(255, 255, 255, .75);
@@ -455,7 +463,7 @@
 }
 
 .addon[active="false"] .icon {
-  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale");
+  filter: grayscale(1);
 }
 
 
@@ -768,7 +776,7 @@
 
 #detail-screenshot[loading] {
   background-image: url("chrome://global/skin/icons/loading_16.png"),
-                    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+                    linear-gradient(rgba(255, 255, 255, 0.5), transparent);
   background-position: 50% 50%;
   background-repeat: no-repeat;
   border-radius: 3px;
@@ -776,7 +784,7 @@
 
 #detail-screenshot[loading="error"] {
   background-image: url("chrome://global/skin/media/error.png"),
-                    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+                    linear-gradient(rgba(255, 255, 255, 0.5), transparent);
 }
 
 #detail-desc-container {
@@ -1098,45 +1106,12 @@ menulist { /* Fixes some styling inconsistencies */
 
 /*** buttons ***/
 
-.addon-control,
-setting:not([type="integer"]) button,
-setting[type="control"] menulist,
-setting[type="color"] colorpicker[type="button"] {
-  -moz-appearance: none;
-  color: black;
-  padding: 0 5px;
-  background: -moz-linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0) 49%, 
-                                   rgba(211, 212, 213, 0.45) 51%, rgba(225, 226, 229, 0.3));
-  background-clip: padding-box;
-  border-radius: 3px;
-  border: 1px solid rgba(31, 64, 100, 0.4);
-  border-top-color: rgba(31, 64, 100, 0.3);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25) inset,
-              0 0 2px 1px rgba(255, 255, 255, 0.25) inset;
-}
-
-setting[type="color"] colorpicker[type="button"] {
-  margin: 1px 5px 2px 5px;
-  padding: 3px;
-  height: 25px;
-}
-
-.addon-control:active:hover,
-setting:not([type="integer"]) button:active:hover,
-setting[type="control"] menulist:active:hover,
-setting[type="color"] colorpicker[type="button"]:active:hover {
-  background-color: rgba(61, 76, 92, 0.2);
-  border-color: rgba(39, 53, 68, 0.5);
-  box-shadow: 0 0 3px 1px rgba(39, 53, 68, 0.2) inset;
-}
-
-.addon-control > .button-box,
-setting:not([type="integer"]) button > .button-box {
-  padding: 1px;
-}
-
-.addon-control[disabled="true"] {
+.addon-control[disabled="true"]:not(.no-auto-hide) {
   display: none;
+}
+
+.no-auto-hide .addon-control {
+  display: block !important;
 }
 
 button.button-link {
@@ -1172,14 +1147,20 @@ button.button-link:not([disabled="true"]):active:hover {
   padding: 1px 3px;
   color: #444;
   text-shadow: 0 0 3px white;
-  background: linear-gradient(rgba(251, 252, 253, 0.95), rgba(246, 247, 248, 0) 49%, 
+  background: linear-gradient(rgba(251, 252, 253, 0.95), transparent 49%, 
                               rgba(211, 212, 213, 0.45) 51%, rgba(225, 226, 229, 0.3));
   background-clip: padding-box;
-  border-radius: 2.5px;
   border: 1px solid rgba(31, 64, 100, 0.4);
   border-top-color: rgba(31, 64, 100, 0.3);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25) inset,
               0 0 2px 1px rgba(255, 255, 255, 0.25) inset;
+}
+
+@media (-moz-os-version: windows-vista),
+       (-moz-os-version: windows-win7) {
+  .header-button {
+    border-radius: 2.5px;
+  }
 }
 
 .header-button[disabled="true"] {

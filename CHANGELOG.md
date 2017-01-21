@@ -1,5 +1,18 @@
 # Changelog
 
+### 3.0.0
+- add border for download items
+- WinVista/7: add inner window border
+- improve statusbar appearance
+- improve findbar appearance
+- fix padding of toolbar items in statusbar
+- fix styling of overflow arrows in tab bar
+- fix padding of tabs
+- sync devtools styling with PM default theme
+- sync about:addons styling with PM default theme
+- sync plugins UI with PM default theme
+- make panel content fade-in rather than fly-in on Windows
+
 ### 2.3.0
 - support PM27's devtools
 - drop PM26 support

@@ -4606,20 +4606,23 @@ text-shadow: none !important;
     margin-top: 1px;
   }
 
-  #appmenu-button {
-    border-width: 2px;
-    -moz-border-left-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
-    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
-    -moz-border-right-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
-    margin-bottom: 1px; /* compensate white outer border */
-    box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
-                0 0 2px 1px rgba(255,255,255,.25) inset;
-  }
+  @media (-moz-os-version: windows-vista),
+         (-moz-os-version: windows-win7) {
+    #appmenu-button {
+      border-width: 2px;
+      -moz-border-left-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+      -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+      -moz-border-right-colors: rgba(255,255,255,.5) rgba(83,42,6,.9);
+      margin-bottom: 1px; /* compensate white outer border */
+      box-shadow: 0 1px 0 rgba(255,255,255,.25) inset,
+                  0 0 2px 1px rgba(255,255,255,.25) inset;
+    }
 
-  #main-window[privatebrowsingmode=temporary] #appmenu-button {
-    -moz-border-left-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
-    -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
-    -moz-border-right-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+    #main-window[privatebrowsingmode=temporary] #appmenu-button {
+      -moz-border-left-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+      -moz-border-bottom-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+      -moz-border-right-colors: rgba(255,255,255,.5) rgba(43,8,65,.9);
+    }
   }
 
   #appmenu-popup {

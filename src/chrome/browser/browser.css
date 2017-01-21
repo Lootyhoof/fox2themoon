@@ -2037,6 +2037,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 #TabsToolbar #new-tab-button:hover,
 #TabsToolbar #new-tab-button:hover:active {
   -moz-image-region: rect(0, 35px, 18px, 17px);
+  background: none;
   border: 0;
   padding-right: 6px;
 }
@@ -2258,14 +2259,14 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 #TabsToolbar .tabs-alltabs-button:hover {
   margin: 2px 0 0;
-  padding: 5px 0px 5px 0px;
+  padding: 3px 0px 5px 0px;
 }
 
 /* newtab on tabstrip  - plus button*/
 #TabsToolbar #new-tab-button {
   width: 27px; 
   margin: 0;
-  padding: 5px 5px 0 0;
+  padding: 2px 5px 0 0;
   -moz-appearance: none;
   list-style-image: url(chrome://browser/skin/tabbrowser/newtab.png);
   -moz-image-region: rect(0, 18px, 18px, 0);

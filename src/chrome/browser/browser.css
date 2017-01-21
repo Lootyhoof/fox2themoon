@@ -1974,13 +1974,13 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   opacity: 0.5;
 }
 
-/* Addon bar */
 :-moz-any(#TabsToolbar, #addon-bar) .toolbarbutton-1,
 :-moz-any(#TabsToolbar, #addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button,
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
   -moz-appearance: none;
   border-style: none;
+  padding: 0 3px;
 }
 
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover,
@@ -2005,43 +2005,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   background-position: left, left, right;
   background-size: auto, 1px 100%, 1px 100%;
   background-repeat: no-repeat;
-}
-
-/* Add-on bar */
-
-#addon-bar {
-  min-height: 20px;
-  border-top: 1px solid ThreeDShadow !important;
-}
-
-#addon-bar:not(:-moz-lwtheme) {
-  -moz-appearance: statusbar;
-}
-
-#status-bar {
-  -moz-appearance: none;
-  background-color: transparent;
-  border: none;
-  min-height: 0;
-}
-
-#status-bar > statusbarpanel {
-  border-width: 0;
-  -moz-appearance: none;
-}
-
-#addonbar-closebutton {
-  border: none;
-  padding: 0 5px;
-  -moz-appearance: none;
-}
-
-#addonbar-closebutton:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-#addonbar-closebutton:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 /* Tabstrip */
@@ -3001,23 +2964,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   outline: 1px dotted -moz-dialogText;
 }
 
-
-/* Add-on bar */
-
-#addon-bar {
-  min-height: 20px;
-  border-top: 2px solid;
-  -moz-border-top-colors: ThreeDShadow ThreeDHighlight;
-}
-
-#FindToolbar:not([hidden="true"]) ~ #addon-bar {
-  border-top: 0;
-}
-
-#FindToolbar {
-  color: black !important;
-}
-
 /* searchbar fix */
 .searchbar-textbox > hbox > hbox {
   height: 22px;
@@ -3029,43 +2975,42 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   height: 22px;
 }
 
+/* Add-on bar */
+
+#addon-bar {
+  -moz-appearance: none;
+  min-height: 20px;
+  border-top-style: none;
+  border-bottom-style: none;
+  padding-top: 1px;
+  background-image: linear-gradient(rgba(0,0,0,.15) 1px, rgba(255,255,255,.15) 1px);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}
+
 #status-bar {
-  border-top: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  min-height: 0;
 }
 
 #addon-bar[customizing] > #status-bar {
-  -moz-appearance: none;
   opacity: .5;
   background-image: repeating-linear-gradient(135deg,
                                               rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
                                               rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);
 }
 
-statusbarpanel#statusbar-display {
-  -moz-padding-start: 0;
-}
-
-/* addonbar close button, same style as tabs close.
-   Adding this for the people without Status4Evar, S4E usage is recommended */
-#addonbar-closebutton > .toolbarbutton-icon {
-  -moz-margin-end: 0px;
-  -moz-padding-end: 2px ;
-  -moz-padding-start: 2px;
-  margin-top: 1px;
+#status-bar > statusbarpanel {
+  border-width: 0;
+  -moz-appearance: none;
 }
 
 #addonbar-closebutton {
   border: none;
-  padding: 3px 2px 4px 2px;
+  padding: 0 5px;
   -moz-appearance: none;
-}
-
-#addonbar-closebutton:not(:hover):not(:active) {
-  -moz-image-region: rect(0, 64px, 16px, 48px);
-}
-
-#addonbar-closebutton:focus {
-  outline: none;
 }
 
 /* Status panel */
@@ -3099,9 +3044,9 @@ statusbarpanel#statusbar-display {
 }
 
 #full-screen-warning-message {
-  background-image: url("chrome://browser/skin/fullscreen-darknoise.png");
+  background-color: hsl(0,0%,15%);
   color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-top: 30px;
   padding: 30px 50px;
   box-shadow: 0 0 2px white;
@@ -4664,17 +4609,46 @@ text-shadow: none !important;
       color: white;
     }
   }
-    
-/* status and find box MUST be excluded from aero */
-  #browser-bottombox:not(:-moz-lwtheme) {
-    -moz-appearance: statusbar !important;
+  
+    /* Show toolbar borders on vista through win8, but not on win10 and later: */
+  @media (-moz-os-version: windows-vista),          
+  (-moz-os-version: windows-win7),          
+  (-moz-os-version: windows-win8) {
+     /* Vertical toolbar border */
+    #main-window[sizemode=normal] #navigator-toolbox:not(:-moz-lwtheme) {
+      border-left: 1px solid rgba(10%,10%,10%,.4);
+      border-right: 1px solid rgba(10%,10%,10%,.4);
+      background-clip: padding-box;
+    }
+  
+    #main-window[sizemode=normal] #browser-border-start,
+    #main-window[sizemode=normal] #browser-border-end {
+      display: -moz-box;
+      background-color: rgba(10%,10%,10%,.4);
+      width: 1px;
+    }
+    #main-window[sizemode=normal] #browser-bottombox {
+      border: 1px solid rgba(10%,10%,10%,.4);
+      border-top-style: none;
+    }
+	#main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"] #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+      background-color: rgba(255,255,255,.5);
+      border-radius: 4px;
+    }
   }
-
-/* make status-bar look different when using aero */
-  #status-bar {
-    -moz-appearance: none;
-    border: none;
-    background-color: inherit;
+  
+    /* Top inner border */
+  #main-window:not([tabsintitlebar]):not([inFullscreen]) #navigator-toolbox:not(:-moz-lwtheme) {
+    -moz-border-top-colors: rgba(10%,10%,10%,.4) ThreeDHighlight;
+  }
+  
+  #appcontent:not(:-moz-lwtheme) {
+    background-color: -moz-dialog;
+  }
+  
+  #browser-bottombox:not(:-moz-lwtheme) {
+    background-color: -moz-dialog;
+    background-clip: padding-box;
   }
 }
 

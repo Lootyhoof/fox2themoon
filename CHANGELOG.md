@@ -1,5 +1,8 @@
 # Changelog
 
+### 3.0.1
+- fix tab padding
+
 ### 3.0.0
 - add border for download items
 - WinVista/7: add inner window border

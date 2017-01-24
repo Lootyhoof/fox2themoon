@@ -2060,7 +2060,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   -moz-appearance: none;
   background: url("chrome://browser/skin/tabbrowser/tab-middle-bkgnd.png") 0px -2px repeat-x;
   margin: 2px 0px 0px;
-  padding: 0px 1px 1px 0px;
+  padding: 2px 1px 2px 0px;
   border: 2px solid;
   border-width: 1px;
   border-bottom: none;

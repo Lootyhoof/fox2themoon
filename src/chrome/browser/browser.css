@@ -1983,6 +1983,11 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   padding: 0 3px;
 }
 
+#toolbar-menubar .toolbarbutton-1,
+#toolbar-menubar .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  padding: 0 3px;
+}
+
 #TabsToolbar .toolbarbutton-1:not([disabled]):hover,
 #TabsToolbar .toolbarbutton-1[open],
 #TabsToolbar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled]):hover,

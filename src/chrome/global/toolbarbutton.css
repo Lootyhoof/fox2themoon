@@ -128,3 +128,10 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   padding: 3px !important;
 }
+
+/* Make sure that toolbar buttons placed in the menu bar do not make it take up too much space. */
+
+#toolbar-menubar toolbarbutton {
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}

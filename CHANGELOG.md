@@ -1,5 +1,11 @@
 # Changelog
 
+### 3.1.0
+- sync about:support styling with default
+- sync about:permissions styling with default
+- add image document favicon when viewing standalone images
+- fix "learn more" links in notification popups
+
 ### 3.0.1
 - fix tab padding
 

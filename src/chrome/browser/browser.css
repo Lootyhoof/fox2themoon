@@ -4278,6 +4278,16 @@ text-shadow: none !important;
 
 /* end of persona fixes */
 
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar {
+  background-image: url("chrome://browser/skin/privatebrowsing-dark.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar:-moz-locale-dir(rtl) {
+  background-position: top left;
+}
+
 /* aero fixes */
 
 @media all and (-moz-windows-compositor) {

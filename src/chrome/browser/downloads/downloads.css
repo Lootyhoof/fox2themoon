@@ -253,7 +253,7 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 /*** Main indicator icon ***/
 
 #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-large.png"),
                               0, 144, 24, 120) no-repeat;
   width:24px;
   height:24px;
@@ -276,7 +276,7 @@ toolbar[iconsize="small"] #downloads-indicator-icon {
    equivalent to -moz-any([progress], [paused]). */
 
 #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
+  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-large.png"),
                               0, 144, 24, 120) no-repeat;
   width:24px;
   height:24px;

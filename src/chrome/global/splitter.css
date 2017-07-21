@@ -77,7 +77,7 @@ grippy {
 }
 
 grippy:hover {
-  background-color: #CCCCFF;
+  background-color: ThreeDHighlight;
 }
 
 splitter[orient="vertical"] > grippy {
@@ -94,21 +94,21 @@ splitter[orient="vertical"] > grippy {
 /* vertical grippies */
 splitter[collapse="before"] > grippy,
 splitter[collapse="after"] > grippy:-moz-locale-dir(rtl) {
-  background-image: url("chrome://global/skin/splitter/grip-vrt-before.gif");
+  background-image: url("chrome://global/skin/splitter/grip-left.gif");
 }
 
 splitter[collapse="after"] > grippy,
 splitter[collapse="before"] > grippy:-moz-locale-dir(rtl) {
-  background-image: url("chrome://global/skin/splitter/grip-vrt-after.gif");
+  background-image: url("chrome://global/skin/splitter/grip-right.gif");
 }
 
 /* horizontal grippies */
 splitter[collapse="before"][orient="vertical"] > grippy {
-  background-image: url("chrome://global/skin/splitter/grip-hrz-before.gif");
+  background-image: url("chrome://global/skin/splitter/grip-top.gif");
 }  
 
 splitter[collapse="after"][orient="vertical"] > grippy {
-  background-image: url("chrome://global/skin/splitter/grip-hrz-after.gif");
+  background-image: url("chrome://global/skin/splitter/grip-bottom.gif");
 }  
   
 /* ..... collapsed state ..... */
@@ -116,20 +116,20 @@ splitter[collapse="after"][orient="vertical"] > grippy {
 /* vertical grippies */
 splitter[collapse="before"][state="collapsed"] > grippy,
 splitter[collapse="after"][state="collapsed"] > grippy:-moz-locale-dir(rtl) {
-  background-image: url("chrome://global/skin/splitter/grip-vrt-after.gif");
+  background-image: url("chrome://global/skin/splitter/grip-right.gif");
 }
 
 splitter[collapse="after"][state="collapsed"] > grippy,
 splitter[collapse="before"][state="collapsed"] > grippy:-moz-locale-dir(rtl) {
-  background-image: url("chrome://global/skin/splitter/grip-vrt-before.gif");
+  background-image: url("chrome://global/skin/splitter/grip-left.gif");
 }
 
 /* horizontal grippies */
 splitter[collapse="before"][state="collapsed"][orient="vertical"] > grippy {
-  background-image: url("chrome://global/skin/splitter/grip-hrz-after.gif");
+  background-image: url("chrome://global/skin/splitter/grip-bottom.gif");
 }  
 
 splitter[collapse="after"][state="collapsed"][orient="vertical"] > grippy {
-  background-image: url("chrome://global/skin/splitter/grip-hrz-before.gif");
+  background-image: url("chrome://global/skin/splitter/grip-top.gif");
 }  
 

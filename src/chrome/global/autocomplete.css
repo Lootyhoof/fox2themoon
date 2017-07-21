@@ -6,6 +6,8 @@
   == Styles used by the autocomplete widget.
   ======================================================================= */
 
+@import url("chrome://os/skin/autocomplete.css");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
@@ -17,12 +19,8 @@ textbox:not(.padded) {
   padding: 0;
 }
 
-/* Used by autocomplete widgets that don't have an icon. Gross. -dwh */
-textbox.padded {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+textbox[nomatch="true"][highlightnonmatches="true"] {
+  color: red;
 }
 
 .autocomplete-textbox-container {
@@ -38,19 +36,6 @@ textbox:not(.padded) .textbox-input-box {
 }
 
 /* ::::: autocomplete popups ::::: */
-
-panel[type="autocomplete"],
-panel[type="autocomplete-richlistbox"],
-.autocomplete-history-popup {
-  -moz-appearance: none;
-  border-width: 1px;
-  -moz-border-top-colors: ThreeDDarkShadow;
-  -moz-border-right-colors: ThreeDDarkShadow;
-  -moz-border-bottom-colors: ThreeDDarkShadow;
-  -moz-border-left-colors: ThreeDDarkShadow;
-  padding: 0;
-  background-color: -moz-Field;
-}
 
 .autocomplete-history-popup {
   max-height: 180px;
@@ -95,69 +80,6 @@ treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
 
 /* ::::: richlistbox autocomplete ::::: */
 
-.autocomplete-richlistbox {
-  -moz-appearance: none;
-  margin: 0;
-}
-
-.autocomplete-richlistitem {
-  padding: 1px 2px;
-  border-bottom: 1px solid ThreeDShadow;
-}
-
-.autocomplete-richlistitem[selected="true"] {
-  background-color: Highlight;
-  color: HighlightText;
-}
-
-.ac-site-icon {
-  width: 16px; 
-  height: 16px;
-  margin: 0 5px -3px 3px;
-}
-
-.ac-type-icon {
-  width: 16px; 
-  height: 16px;
-}
-
-.ac-extra > .ac-result-type-tag {
-  margin: 0 4px;
-}
-
-.ac-extra > .ac-comment {
-  padding-right: 4px;
-}
-
-.ac-ellipsis-after {
-  margin: 2px 0px 0px 0px !important;
-  padding: 0; 
-  min-width: 1em;
-}
-
-.ac-normal-text {
-  margin: 2px 0px 0px 0px !important;
-  padding: 0;
-}
-
-.ac-normal-text > html|span {
-  margin: 0 !important;
-  padding: 0;
-}
-
-html|span.ac-emphasize-text {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-html|span.ac-emphasize-alt {
-  text-decoration: underline;
-}
-
-.ac-title, .ac-url {
-  overflow: hidden;
-}
-
 /* ::::: textboxes inside toolbarpaletteitems ::::: */
 
 toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input {
@@ -167,4 +89,3 @@ toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input 
 toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
   visibility: hidden;
 }
-

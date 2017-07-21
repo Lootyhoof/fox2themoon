@@ -1,10 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-/* ===== tree.css ===================================================
-  == Styles used by the XUL outline element.
-  ======================================================================= */
+ 
+@import url("chrome://os/skin/tree.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -160,13 +158,6 @@ treechildren::-moz-tree-separator {
 
 /* ::::: drop feedback ::::: */
 
-tree[seltype="cell"] > treechildren::-moz-tree-cell-text(primary, dropOn),
-tree[seltype="text"] > treechildren::-moz-tree-cell-text(primary, dropOn),
-treechildren::-moz-tree-cell-text(primary, dropOn) {
-  background-color: Highlight;
-  color: HighlightText;
-}
-
 treechildren::-moz-tree-drop-feedback {
   background-color: Highlight;
   width: 50px;
@@ -178,11 +169,12 @@ treechildren::-moz-tree-drop-feedback {
 
 treechildren::-moz-tree-progressmeter {
   margin: 2px 4px;
-  border: 2px solid;
-  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
-  -moz-border-right-colors: ThreeDHighlight -moz-Dialog;
-  -moz-border-bottom-colors: ThreeDHighlight -moz-Dialog;
-  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+  padding: 1px;
+  border: 1px solid;
+  border-top-color: ThreeDShadow;
+  border-right-color: ThreeDHighlight;
+  border-bottom-color: ThreeDHighlight;
+  border-left-color: ThreeDShadow;
   background-color: -moz-Dialog;
   color: ThreeDShadow;
 }
@@ -287,11 +279,19 @@ treechildren::-moz-tree-column(insertafter) {
 }
 
 treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png");
+}
+
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-asc-classic.png");
 }
 
 treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png");
+}
+
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-dsc-classic.png");
 }
 
 /* ::::: column picker :::::  */
@@ -327,40 +327,6 @@ treechildren.gridlines::-moz-tree-cell {
 
 treechildren.gridlines::-moz-tree-row {
   border: none;
-}
-
-treechildren::-moz-tree-image(Name) {
-  padding-right: 2px;
-}
-
-treechildren::-moz-tree-image(Name) {
-  margin: 0px 2px;
-  list-style-image: url("chrome://global/skin/icons/folder-item.png") !important;
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-treechildren::-moz-tree-image(Name, container) {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-treechildren::-moz-tree-image(Name, open) {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-treechildren::-moz-tree-image(Name, separator) {
-  list-style-image: none;
-  width: 0px !important;
-  height: 0px !important;
-  margin: 0px 0px;
-}
-
-treechildren::-moz-tree-cell-text(Name, separator) {
-  color: ThreeDShadow;
-  margin: 0px 5px 0px 5px;
-}
-
-treechildren::-moz-tree-cell-text(Name, separator, selected, focus) {
-  color: HighlightText;
 }
 
 /* ::::: editable tree ::::: */

@@ -96,11 +96,19 @@ listheader[sortable="true"]:hover:active {
 }
 
 .listheader-sortdirection[sortDirection="ascending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png");
+}
+
+.listheader-sortdirection[sortDirection="ascending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-asc-classic.png");
 }
 
 .listheader-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png");
+}
+
+.listheader-sortdirection[sortDirection="descending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-dsc-classic.png");
 }
 
 /* ::::: listcell ::::: */
@@ -132,17 +140,4 @@ listheader[sortable="true"]:hover:active {
   min-width: 13px;
   min-height: 13px;
   background: -moz-Field no-repeat 50% 50%;
-}
-
-.listcell-check[checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
-}
-
-.listcell-check[disabled="true"] {
-  border-color: GrayText;
-  background-image: url("chrome://global/skin/checkbox/cbox-dis.gif");
-}
-
-.listcell-check[disabled="true"][checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
 }

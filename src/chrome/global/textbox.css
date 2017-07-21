@@ -36,13 +36,6 @@ html|*.textbox-textarea {
   font: inherit;
 }
 
-html|*.textbox-input::-moz-placeholder,
-html|*.textbox-textarea::-moz-placeholder {
-  color: GrayText;
-  padding-left: 2px;
-  opacity: 1;
-}
-
 .textbox-contextmenu {
   cursor: default;
 }
@@ -62,18 +55,48 @@ textbox[disabled="true"] {
   color: GrayText;
 }
 
-/* ..... focused state ..... */
-textbox[focused="true"] html|*.textbox-input::-moz-placeholder {
-  opacity: 0;
-}
-
 /* ::::: plain textbox ::::: */
 
 textbox.plain {
   -moz-appearance: none !important;
+  background-color: transparent;
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+}
+
+/* ::::: search textbox ::::: */
+
+.textbox-search-icon {
+  list-style-image: url(chrome://global/skin/icons/Search-glass.png);
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.textbox-search-icon:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+.textbox-search-icon[searchbutton]:not([disabled]) {
+  cursor: pointer;
+}
+
+.textbox-search-clear {
+  list-style-image: url(chrome://global/skin/icons/Search-close.png);
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.textbox-search-clear:not([disabled]) {
+  cursor: default;
+}
+
+.textbox-search-clear:not([disabled]):hover ,
+.textbox-search-icon[searchbutton]:not([disabled]):hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.textbox-search-clear:not([disabled]):hover:active ,
+.textbox-search-icon[searchbutton]:not([disabled]):hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 /* ::::: textboxes inside toolbarpaletteitems ::::: */

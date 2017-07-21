@@ -8,26 +8,14 @@
 
 /* all localizable skin settings shall live here */
 @import url("chrome://global/locale/intl.css");
+@import url("chrome://os/skin/global.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: XBL bindings ::::: */
 
-radio {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio");
-}
-
-menulist > menupopup,
-.menulist-menupopup {
+menulist > menupopup {
   -moz-binding: url("chrome://global/content/bindings/popup.xml#popup-scrollbars");
-}
-
-.menulist-compact {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#menulist-compact");
-}
-
-progressmeter[mode="undetermined"] {
-  -moz-binding: url("chrome://global/content/bindings/progressmeter.xml#progressmeter-undetermined");
 }
 
 /* ::::: root elements ::::: */
@@ -37,8 +25,6 @@ page,
 dialog,
 wizard,
 prefwindow {
-  -moz-appearance: window;
-  background-color: -moz-Dialog;
   color: -moz-DialogText;
   font: message-box;
 }
@@ -62,7 +48,7 @@ window.dialog {
 }
 
 .message-icon {
-  list-style-image: url("chrome://global/skin/icons/Message.png");
+  list-style-image: url("chrome://global/skin/icons/information-32.png");
 }
 
 .alert-icon {
@@ -87,80 +73,6 @@ iframe {
   min-height: 10px;
 }
 
-/* ::::: statusbar ::::: */
-
-statusbar {
-  -moz-appearance: statusbar;
-  border-top: 1px solid ThreeDLightShadow;
-  border-left: 1px solid ThreeDShadow;
-  border-right: 1px solid ThreeDHighlight;
-  border-bottom: 1px solid ThreeDHighlight;
-  background-color: -moz-Dialog;
-  min-height: 22px;
-}
-
-statusbarpanel {
-  -moz-appearance: statusbarpanel;
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  border-left: 1px solid ThreeDHighlight;
-  border-top: 1px solid ThreeDHighlight;
-  border-right: 1px solid ThreeDShadow;
-  border-bottom: 1px solid ThreeDShadow;
-  padding: 0 4px;
-}
-
-statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
-  -moz-appearance: none;
-  border-top-style: none;
-  border-bottom-style: none;
-  -moz-border-start-style: none;
-}
-
-.statusbar-resizerpanel {
-  -moz-box-align: end;
-  -moz-box-pack: end;
-  -moz-appearance: resizerpanel;
-  padding: 0;
-  border: none;
-}
-
-.statusbarpanel-iconic,
-.statusbarpanel-iconic-text,
-.statusbarpanel-menu-iconic {
-  padding: 0 1px;
-}
-
-resizer[dir="bottomright"] {
-  -moz-appearance: resizer;
-  cursor: se-resize;
-}
-
-/* XXXBlake yeah, shoot me -- these don't belong here.  I'll move them later. */
-
-sidebarheader {
-  height: 25px;
-  background-color: -moz-Dialog;
-  -moz-appearance: toolbox;
-  border-bottom: 1px solid ThreeDShadow;
-  border-top: 1px solid ThreeDHighlight;
-}
-
-sidebarheader > label {
-  -moz-padding-start: 4px;
-}
-
-/* ::::: miscellaneous ::::: */
-
-.toolbar-focustarget {
-  -moz-user-focus: ignore !important;
-}
-
-toolbar[mode="text"] .toolbarbutton-text {
-  padding: 0 !important;
-  margin: 3px 5px !important;
-}
-
 /* ::::: miscellaneous formatting ::::: */
 
 :root:-moz-lwtheme,
@@ -176,32 +88,13 @@ toolbar[mode="text"] .toolbarbutton-text {
   text-shadow: 1px 1px 1.5px black;
 }
 
-statusbar:-moz-lwtheme,
-sidebarheader:-moz-lwtheme {
-  -moz-appearance: none;
-  background: none;
-  border-style: none;
-}
-
-/* inset areas */
-
 .inset {
   border: 1px solid ThreeDShadow;
   border-right-color: ThreeDHighlight;
   border-bottom-color: ThreeDHighlight;
   margin: 0 5px 5px;
 }
-
-.box-inset {
-  margin: 2px 4px;
-  border: 2px solid;
-  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
-  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
-  background-color: -moz-Field;
-  color: -moz-FieldText;
-}
+  
 
 .outset {
   border: 1px solid ThreeDShadow;
@@ -209,31 +102,7 @@ sidebarheader:-moz-lwtheme {
   border-top-color: ThreeDHighlight;
 }
 
-.outset-top-bottom {
-  border-top: 1px solid ThreeDHighlight;
-  border-bottom: 1px solid ThreeDShadow;
-}
 
-/* formatting */
-.groove-top {
-  border-top: 2px groove ThreeDFace;
-}
-
-.groove-right {
-  border-right: 2px groove ThreeDFace;
-}
-
-.groove-left {
-  border-left: 2px groove ThreeDFace;
-}
-
-.groove-bottom {
-  border-bottom: 2px groove ThreeDFace;
-}
-
-
-/** separator rules **/
-/* standard separators */
 separator:not([orient="vertical"]) {
   height: 1.5em;
 }
@@ -241,51 +110,14 @@ separator[orient="vertical"] {
   width: 1.5em;
 }
 
-/* thinner separators (50% size) */
 separator.thin:not([orient="vertical"]) {
   height: 0.5em;
-}
+}  
+
 separator.thin[orient="vertical"] {
   width: 0.5em;
 }
-
-/* groove separators (50% size) */
-separator.groove:not([orient="vertical"]) {
-  border-top: 1px solid ThreeDShadow;
-  border-bottom: 1px solid ThreeDHighlight;
-  height: 0;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-}
-
-separator.groove[orient="vertical"] {
-  border-left: 1px solid ThreeDShadow;
-  border-right: 1px solid ThreeDHighlight;
-  margin-left: 0.4em;
-  margin-right: 0.4em;
-}
-
-/* groove separators (0 padding, for dividing effects) */
-separator.groove-thin {
-  border-top: 1px solid ThreeDShadow;
-  border-bottom: 1px solid ThreeDHighlight;
-  height: 0px;
-}
-
-separator[orient="vertical"].groove-thin {
-  border-left: 1px solid ThreeDShadow;
-  border-right: 1px solid ThreeDHighlight;
-}
-
-
-/** text formatting rules **/
-/* label (with margins) */
-
-/** Reduced Margin for some UI **/
-.small-margin {
-  margin: 1px 2px;
-}
-
+    
 .plain {
   -moz-appearance: none;
   margin: 0 !important;
@@ -293,35 +125,25 @@ separator[orient="vertical"].groove-thin {
   padding: 0;
 }
 
-description, label {
+description,
+label {
   cursor: default;
 }
 
 description {
-  margin: 1px 5px 4px 5px;
+  margin-bottom: 4px;
 }
 
 label[disabled="true"] {
   color: GrayText;
 }
 
-label {
-  margin-top: 1px;
-  margin-bottom: 2px;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 5px;
+.tooltip-label {
+  margin: 0;
 }
 
 .header {
   font-weight: bold;
-}
-
-.larger-text {
-  font-size: larger;
-}
-
-.smaller-text {
-  font-size: smaller;
 }
 
 .monospace {
@@ -344,36 +166,13 @@ label {
   padding: 20px 44px 10px;
 }
 
-.caption-text {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  -moz-margin-start: 1px !important;
-  -moz-margin-end: 2px !important;
-}
-
-
-/* class for text with a 'link' appearance */
 .text-link {
-  color: blue;
-  text-decoration: underline;
-  border: 1px solid transparent;
-}
-
-.text-link:-moz-focusring {
-  color: red;
-  border: 1px dotted -moz-DialogText;
-}
-
-.text-link:hover {
+  color: -moz-nativehyperlinktext;
   cursor: pointer;
 }
 
-.text-link:hover:active {
-  color: red;
-}
-
-.text-link[visited="true"] {
-  color: purple;
+.text-link:hover {
+  text-decoration: underline;
 }
 
 /* :::::: autoscroll popup ::::: */

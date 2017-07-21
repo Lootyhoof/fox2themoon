@@ -1,0 +1,82 @@
+#toolbar-menubar {
+  -moz-appearance: menubar !important;
+}
+
+#tabbrowser-tabs[tabsontop="true"] {
+  margin-bottom: -3px;
+}
+
+#main-window:not([disablechrome]) #navigator-toolbox[tabsontop=true] {
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: none !important;
+}
+
+/* Places toolbar */
+toolbarbutton.bookmark-item {
+  margin: 0;
+  padding: 2px 3px;
+}
+
+toolbarbutton.bookmark-item:hover:active,
+toolbarbutton.bookmark-item[open="true"] {
+  padding-top: 3px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 2px;
+}
+
+.bookmark-item > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Prevent [mode="icons"] from hiding the label */
+.bookmark-item > .toolbarbutton-text {
+  display: -moz-box !important;
+}
+
+.bookmark-item > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+/* Dropmarker for folder bookmarks */
+.bookmark-item[container] > .toolbarbutton-menu-dropmarker {
+  display: -moz-box !important;
+}
+
+/* Application button menu */
+
+#appmenu-toolbar-button {
+  -moz-appearance: none;
+  border: none;
+  padding: 3px 0 0 5px;
+  list-style-image: url("chrome://browser/skin/appmenu.png");
+  -moz-image-region: rect(0px, 18px, 18px, 0px);
+}
+
+#appmenu-toolbar-button:hover {
+  -moz-image-region: rect(18px, 18px, 36px, 0px);
+}
+
+toolbar:not([brighttext]) #appmenu-toolbar-button:hover:active,
+toolbar[brighttext] #appmenu-toolbar-button:not(:hover):not(:active) {
+  -moz-image-region: rect(36px, 18px, 54px, 0px);
+}
+
+toolbar[brighttext] #appmenu-toolbar-button:hover:active {
+  -moz-image-region: rect(0px, 18px, 18px, 0px);
+}
+
+#appmenu-toolbar-button > label,
+#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
+  display: none !important;
+}
+
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: none !important;
+}

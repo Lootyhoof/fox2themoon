@@ -1,7 +1,12 @@
-/**
- * This is used to fix different theme rendering behaviours between Win/Linux and Mac firefox browsers. 
- * For more informations see http://forums.mozillazine.org/viewtopic.php?f=18&t=906535&start=0
-*/
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://os_target/skin/menulist.css");
+/* ===== menulist.css ===================================================
+  == Styles used by the XUL menulist element.
+  ======================================================================= */
 
+@import url("chrome://os/skin/menulist.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");

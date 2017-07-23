@@ -152,7 +152,7 @@ menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
 #appmenu-button {
   -moz-appearance: none;
   background-clip: padding-box;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 var(--appmenu-border-radius) var(--appmenu-border-radius);
   border: 1px solid;
   border-top: none;
   color: white;

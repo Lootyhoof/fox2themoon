@@ -9,6 +9,19 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
+:root {
+  --appmenu-border-radius: 4px;
+  
+  --toolbar-custom-color: -moz-Dialog;
+  
+  --tab-background: url("chrome://browser/skin/tabbrowser/tab-middle-bkgnd.png") 0px -2px repeat-x;
+  --tab-background-hover: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x;
+  --tab-border-radius: 3px;
+  --tab-selected-background: url("chrome://browser/skin/tabbrowser/tab-middle.png") 0px -2px repeat-x;
+  
+  --window-text-color: currentColor;
+}
+
 #menubar-items {
   -moz-box-orient: vertical; /* for flex hack */
 }
@@ -30,7 +43,7 @@
 
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
   -moz-appearance: none;
-  background-color: -moz-Dialog;
+  background-color: var(--toolbar-custom-color);
 }
 
 @media all and (-moz-windows-compositor) {
@@ -1243,7 +1256,7 @@ toolbar[iconsize="small"] #zoom-in-button {
 
 .urlbar-history-dropmarker {
   -moz-appearance: none;
-  background: -moz-dialog url("chrome://browser/skin/autocomplete-dropmark-bkgnd.png");
+  background: var(--toolbar-custom-color) url("chrome://browser/skin/autocomplete-dropmark-bkgnd.png");
   background-position: 0 0;
   padding: 0;
   border: none;
@@ -1374,7 +1387,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   margin-right: -38px !important;
   -moz-outline-radius-topright: 3px !important;
   -moz-outline-radius-bottomright: 3px !important;
-  background: -moz-Dialog url("chrome://browser/skin/Go-bkgnd.png") !important;
+  background: var(--toolbar-custom-color) url("chrome://browser/skin/Go-bkgnd.png") !important;
   background-position: -1px -1px !important;
 }
 
@@ -1625,7 +1638,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 
 #TabsToolbar[tabsontop=false]:not(:-moz-lwtheme) {
   border-bottom: 4px solid;
-  -moz-border-bottom-colors: ThreeDShadow -moz-Dialog -moz-Dialog ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDShadow var(--toolbar-custom-color) var(--toolbar-custom-color) ThreeDShadow;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
@@ -1661,22 +1674,18 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 #main-window[tabsintitlebar] .tabbrowser-tab:not(:-moz-lwtheme),
 #main-window[tabsintitlebar] .tabbrowser-tab:hover:not(:-moz-lwtheme),
 #main-window[tabsintitlebar] .tabs-alltabs-button:not(:-moz-lwtheme) {
-  background-color: -moz-dialog !important;
+  background-color: var(--toolbar-custom-color) !important;
 }
 
 .tabbrowser-tab {
   -moz-appearance: none;
-  background: url("chrome://browser/skin/tabbrowser/tab-middle-bkgnd.png") 0px -2px repeat-x;
+  background: var(--tab-background);
   margin: 2px 0px 0px;
   padding: 2px 1px 2px 0px;
   border: 2px solid;
   border-width: 1px;
   border-bottom: none;
-  border-top-left-radius: 3px; /* like in firefox 2 */
-  border-top-right-radius: 3px;
-  /* we need to add bottom radii, they appear to be rounded if we don't */
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
   -moz-border-top-colors: ThreeDShadow rgba(255,255,255,.3);
   -moz-border-right-colors: rgba(0,0,0,.1) transparent;
   -moz-border-left-colors: ThreeDShadow rgba(255,255,255,.3);
@@ -1690,16 +1699,16 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-tab:not([selected="true"]):hover {
-  background: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x;
+  background: var(--tab-background-hover);
 }
 
 .tabbrowser-tab[selected="true"] {
-  background: url("chrome://browser/skin/tabbrowser/tab-middle.png") 0px -2px repeat-x;
+  background: var(--tab-selected-background);
   font-weight: bold;
 }
 
 .tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) {
-  background-color: -moz-dialog;
+  background-color: var(--toolbar-custom-color);
 }
 
 .tabbrowser-tab[busy] > .tab-icon-image {
@@ -2461,8 +2470,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   padding-bottom: 10px;
   -moz-appearance: none;
   border: none;
-  background: -moz-dialog;
-  color: -moz-dialogText;
+  background: var(--toolbar-custom-color);
+  color: -moz-DialogText;
 }
 
 #allTabs-meta {
@@ -2484,7 +2493,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .allTabs-favicon[src] {
-  background-color: -moz-dialog;
+  background-color: var(--toolbar-custom-color);
   width: 22px;
   height: 22px;
   padding-top: 1px;
@@ -2511,7 +2520,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .allTabs-preview:focus > * > .allTabs-preview-inner {
-  outline: 1px dotted -moz-dialogText;
+  outline: 1px dotted -moz-DialogText;
 }
 
 /* searchbar fix */
@@ -3278,8 +3287,8 @@ html|*#gcli-output-frame {
 
 #main-window:-moz-lwtheme menupopup menuitem,
 #main-window:-moz-lwtheme menupopup menu{
-color: black !important;
-text-shadow: none !important;
+  color: black !important;
+  text-shadow: none !important;
 }
 
 #main-window[tabsontop="true"] #nav-bar:-moz-lwtheme {
@@ -3670,11 +3679,11 @@ text-shadow: none !important;
   }
   
   #appcontent:not(:-moz-lwtheme) {
-    background-color: -moz-dialog;
+    background-color: var(--toolbar-custom-color);
   }
   
   #browser-bottombox:not(:-moz-lwtheme) {
-    background-color: -moz-dialog;
+    background-color: var(--toolbar-custom-color);
     background-clip: padding-box;
   }
 }
@@ -3799,7 +3808,7 @@ margin-right: 0 !important;
 /* Roboform BG fix */
 #rf-autosave-bar-top,
 #rf-autosave-bar-bottom {
-  background: -moz-dialog !important;
+  background: var(--toolbar-custom-color) !important;
 }
 
 /* Stacked Inspector toolbarbutton size fix */

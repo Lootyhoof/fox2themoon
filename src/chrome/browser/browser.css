@@ -3459,8 +3459,11 @@ html|*#gcli-output-frame {
     #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"],
     #main-window[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] > #toolbar-menubar[autohide="true"] ~ #TabsToolbar {
       background: transparent;
-      /* Use a light text color rather than fog on Win8/10 */
-      color: white;
+      color: var(--window-text-color);
+    }
+    
+    #main-menubar > menu:not(:-moz-lwtheme) {
+      color: inherit; /* allow menubar items to be styled */
     }
   }
   

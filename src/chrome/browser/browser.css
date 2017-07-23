@@ -1861,11 +1861,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   padding: 4px 0px 5px 0px;
 }
 
-#TabsToolbar .tabs-alltabs-button:hover {
-  margin: 2px 0 0;
-  padding: 3px 0px 5px 0px;
-}
-
 /* newtab on tabstrip  - plus button*/
 #TabsToolbar #new-tab-button {
   width: 27px; 

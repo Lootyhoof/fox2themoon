@@ -1,21 +1,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#navigator-toolbox::after {
-  content: "";
-  display: -moz-box;
-  -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
-  height: 1px;
-  background-color: ThreeDShadow;
-}
-
-#navigator-toolbox[tabsontop=false]::after,
-#main-window[disablechrome] #navigator-toolbox::after {
-  visibility: collapse;
-}
-
 @media not all and (-moz-os-version: windows-win10) {
-  #main-window[tabsintitlebar] .tabbrowser-tab:not([selected]),
-  #main-window[tabsintitlebar] .tabs-newtab-button{
+  #main-window[tabsintitlebar] .tabbrowser-tab:not([selected]){
     border-bottom: 1px solid ThreeDShadow;
   }
   

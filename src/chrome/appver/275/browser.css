@@ -131,7 +131,7 @@
 
   .titlebar-button {
     border: none;
-    margin: 0 0 2px 0 !important;
+    margin: 0 0 1px 0 !important;
     padding: 9px 17px;
     transition: background-color linear 120ms;
   }

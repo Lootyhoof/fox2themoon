@@ -1,5 +1,18 @@
 # Changelog
 
+### 4.0.0
+- refactor toolbarbutton stylings with modern CSS
+- compact toolbar icons
+- modernise platform stylings for Windows and Linux
+- add private browsing indicator in menubar
+- fix hover state of alltabs button in tab bar
+- add CSS variables for increased customisation
+- add about:home styling for Home Styler
+- add more Firefox 2-like global icons
+- sync devtools styling with default
+- PM27.5: draw a background on the window area in Windows 10
+- major cleanup of redundant files
+
 ### 3.1.0
 - sync about:support styling with default
 - sync about:permissions styling with default

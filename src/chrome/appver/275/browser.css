@@ -2,6 +2,15 @@
 
 @media all and (-moz-windows-compositor) {
   @media (-moz-os-version: windows-win10) {
+    /* Fix tab borders in tabsintitlebar mode */
+    #main-window[tabsintitlebar] .tabbrowser-tab:not([selected]){
+      border-bottom: 1px solid ThreeDShadow;
+    }
+    
+    #main-window[tabsintitlebar] #TabsToolbar {
+      margin-top: -1px !important;
+    }
+    
     /* Draw XUL caption buttons and background on Win10 */
     @media (-moz-windows-accent-color-applies: 0) {
       /* Default styling for when no accent color is applied */

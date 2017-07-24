@@ -1608,8 +1608,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 #main-window[tabsintitlebar] .tabbrowser-tab:not(:-moz-lwtheme),
-#main-window[tabsintitlebar] .tabbrowser-tab:hover:not(:-moz-lwtheme),
-#main-window[tabsintitlebar] .tabs-alltabs-button:not(:-moz-lwtheme) {
+#main-window[tabsintitlebar] .tabbrowser-tab:hover:not(:-moz-lwtheme) {
   background-color: var(--toolbar-custom-color) !important;
 }
 

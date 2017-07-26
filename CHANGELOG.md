@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.1
+- fix notification icons
+- redesign downloads panel
+
 ### 4.0.0
 - refactor toolbarbutton stylings with modern CSS
 - compact toolbar icons

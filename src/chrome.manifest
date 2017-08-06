@@ -4,6 +4,7 @@ skin	mozapps		f2tm	chrome/mozapps/
 
 skin	os	f2tm	chrome/os/winnt/		os=WINNT
 skin	os	f2tm	chrome/os/linux/		os=Linux
+skin	os	f2tm	chrome/os/darwin/		os=Darwin
 
 skin	appver	f2tm	chrome/appver/274/		appversion<27.5.0a1
 skin	appver	f2tm	chrome/appver/275/		appversion>=27.5.0a1

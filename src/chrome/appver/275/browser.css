@@ -154,6 +154,10 @@
       padding-top: 8px;
       padding-bottom: 8px;
     }
+    
+    #main-window[tabsintitlebar] .titlebar-button {
+      margin-bottom: 2px !important;
+    }
 
     .titlebar-button > .toolbarbutton-icon {
       width: 12px;

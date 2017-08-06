@@ -7,7 +7,7 @@
 }
 
 #main-window:not([disablechrome]) #navigator-toolbox[tabsontop=true] {
-  border-bottom: 1px solid ThreeDShadow;
+  border-bottom: 1px solid var(--shadow-color);
 }
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,

@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.2
+- cleanup Windows styling
+- (re-)add basic OS X styling
+
 ### 4.0.1
 - fix notification icons
 - redesign downloads panel

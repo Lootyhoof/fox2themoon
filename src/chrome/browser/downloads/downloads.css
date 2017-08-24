@@ -2,6 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --toolbar-text-color: -moz-DialogText;
+}
+
 /*** Panel and outer controls ***/
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
@@ -40,7 +44,7 @@
 }
 
 #downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus {
-  outline: 1px -moz-dialogtext dotted;
+  outline: 1px var(--toolbar-text-color) dotted;
   outline-offset: -1px;
 }
 
@@ -99,7 +103,7 @@ richlistitem[type="download"] {
 }
 
 #downloadsPanel[keyfocus] > #downloadsFooter > #downloadsSummary:focus {
-  outline: 1px -moz-dialogtext dotted;
+  outline: 1px var(--toolbar-text-color) dotted;
   outline-offset: -5px;
 }
 
@@ -130,7 +134,7 @@ richlistitem[type="download"]:first-child {
 }
 
 #downloadsPanel[keyfocus] > #downloadsListBox:focus > richlistitem[type="download"][selected] {
-  outline: 1px -moz-dialogtext dotted;
+  outline: 1px var(--toolbar-text-color) dotted;
   outline-offset: -1px;
 }
 
@@ -216,60 +220,19 @@ richlistitem[type="download"]:first-child {
 /*** Button icons ***/
 
 .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:hover {
-  -moz-image-region: rect(0px, 49px, 16px, 33px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:active {
-  -moz-image-region: rect(0px, 66px, 16px, 50px);
 }
 
 .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 49px, 32px, 33px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 66px, 32px, 50px);
-}
-#downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-#downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 49px, 32px, 33px);
-}
-#downloadsPanel[keyfocus] > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 66px, 32px, 50px);
-}
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow {
- -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 49px, 32px, 33px);
-}
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover > stack > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 66px, 32px, 50px);
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 16px, 48px, 0px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:hover {
-  -moz-image-region: rect(32px, 49px, 48px, 33px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:active {
-  -moz-image-region: rect(32px, 66px, 48px, 50px);
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
 /*** Status and progress indicator ***/
@@ -374,8 +337,7 @@ toolbar[iconsize="small"] #downloads-indicator:not([counter]) > #downloads-indic
 #downloads-indicator-counter {
   height: 9px;
   margin: -3px 0px 0px 0px;
-  color: hsl(0,0%,30%);
-  text-shadow: hsla(0,0%,100%,.5) 0 1px;
+  color: var(--toolbar-text-color);
   font-size: 9px;
   line-height: 9px;
   text-align: center;

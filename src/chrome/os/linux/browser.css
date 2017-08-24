@@ -80,3 +80,12 @@ toolbar[brighttext] #appmenu-toolbar-button:hover:active {
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: none !important;
 }
+
+/* Private browsing indicator */
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/privatebrowsing-dark.png") center no-repeat;
+  width: 40px;
+}

@@ -14,6 +14,7 @@
   --appmenu-border-radius: 4px;
   
   --toolbar-custom-color: -moz-Dialog;
+  --toolbar-text-color: -moz-DialogText;
   
   --shadow-color: ThreeDShadow;
   
@@ -1071,7 +1072,7 @@ toolbar[iconsize="small"] #zoom-in-button {
 }
 
 #identity-box:focus {
-  outline: 1px dotted -moz-DialogText;
+  outline: 1px dotted var(--toolbar-text-color);
 }
 
 #identity-box:hover {
@@ -1507,7 +1508,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-tab:focus .tab-text {
-  border: 1px dotted -moz-DialogText;
+  border: 1px dotted var(--toolbar-text-color);
 }
 
 /* Tab DnD indicator */
@@ -2031,7 +2032,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .notification-anchor-icon:-moz-focusring {
-  outline: 1px dotted -moz-DialogText;
+  outline: 1px dotted var(--toolbar-text-color);
   outline-offset: -3px;
 }
 
@@ -2241,7 +2242,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-appearance: none;
   border: none;
   background: var(--toolbar-custom-color);
-  color: -moz-DialogText;
+  color: var(--toolbar-text-color);
 }
 
 #allTabs-meta {
@@ -2290,7 +2291,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .allTabs-preview:focus > * > .allTabs-preview-inner {
-  outline: 1px dotted -moz-DialogText;
+  outline: 1px dotted var(--toolbar-text-color);
 }
 
 /* searchbar fix */

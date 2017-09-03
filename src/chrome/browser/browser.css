@@ -3129,10 +3129,11 @@ html|*#gcli-output-frame {
   background-position: top left;
 }
 
-#main-window[privatebrowsingmode=temporary] #appmenu-button {
+#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
   list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
+  width: 20px;
+  height: 16px;
 }
-
 
 /* Extension styles */
 /* tabmixplus fixes, why I should do this? */

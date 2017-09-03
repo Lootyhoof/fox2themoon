@@ -1,5 +1,11 @@
 # Changelog
 
+### 4.0.3
+- fix download icons
+- restore native toolbarbutton styling
+- Windows: improve appmenu private browsing indicator
+- Linux: add private browsing indicator to tab bar
+
 ### 4.0.2
 - cleanup Windows styling
 - (re-)add basic OS X styling

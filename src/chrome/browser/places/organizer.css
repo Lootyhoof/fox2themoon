@@ -10,7 +10,7 @@
 
 #back-button,
 #forward-button {
-  list-style-image: url("chrome://browser/skin/Toolbar-large.png");
+  list-style-image: var(--toolbarbutton-large-image);
   -moz-appearance: none;
   padding: 0;
   border: none;

@@ -22,6 +22,9 @@
   --tab-background-hover: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x;
   --tab-border-radius: 3px;
   --tab-selected-background: url("chrome://browser/skin/tabbrowser/tab-middle.png") 0px -2px repeat-x;
+
+  --toolbarbutton-large-image: url("chrome://browser/skin/Toolbar-large.png");
+  --toolbarbutton-small-image: url("chrome://browser/skin/Toolbar-small.png");
   
   --window-text-color: currentColor;
 }
@@ -425,7 +428,7 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar-large.png");
+  list-style-image: var(--toolbarbutton-large-image);
 }
 
 toolbar[mode=full] .toolbarbutton-1:not([type=menu-button]) {
@@ -773,7 +776,7 @@ toolbar:not([iconsize="small"]) #new-window-button .toolbarbutton-icon {
 toolbar[iconsize="small"] .toolbarbutton-1 {
   -moz-box-orient: vertical;
   min-width: 0;
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  list-style-image: var(--toolbarbutton-small-image);
 }
 
 toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"] {
@@ -830,7 +833,7 @@ toolbar[iconsize="small"] #home-button.toolbarbutton-1 .toolbarbutton-icon {
   padding-left: 1px;
 }
 #home-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  list-style-image: var(--toolbarbutton-small-image);
 }
 toolbar[iconsize="small"] #home-button,
 #home-button.bookmark-item {
@@ -868,7 +871,7 @@ toolbar[iconsize="small"] #bookmarks-button {
 /* ff4 bookmarks button */
 
 toolbar[iconsize="small"] #bookmarks-menu-button {
-  list-style-image: url("chrome://browser/skin/Toolbar-small.png");
+  list-style-image: var(--toolbarbutton-small-image);
   -moz-image-region: rect(0px 128px 16px 112px);
 }
 
@@ -2132,7 +2135,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 #download-monitor {
-  list-style-image: url("chrome://browser/skin/Toolbar-large.png");
+  list-style-image: var(--toolbarbutton-large-image);
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 

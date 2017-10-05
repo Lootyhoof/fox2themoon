@@ -1411,10 +1411,6 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
   border-bottom: 1px solid var(--shadow-color);
 }
 
-#main-window[tabsintitlebar] #TabsToolbar:not(:-moz-lwtheme) {
-  background: transparent !important;
-}
-
 #main-window[tabsontop=true] #nav-bar:not(:-moz-lwtheme) {
   border-top: none;
 }

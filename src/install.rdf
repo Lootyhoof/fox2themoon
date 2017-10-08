@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{bbee9373-4135-47cb-b98e-98e62085837f}</em:id>
-    <em:version>4.0.3</em:version>
+    <em:version>4.0.4</em:version>
     <em:name>Fox 2 The Moon</em:name>
     <em:description>The default Firefox 2 theme for Pale Moon. Fork of "Firefox 2, the theme, reloaded" by rctgamer3 et al.</em:description>
     <em:creator>Lootyhoof</em:creator>

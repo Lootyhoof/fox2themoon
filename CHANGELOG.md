@@ -1,5 +1,14 @@
 # Changelog
 
+### 4.0.4
+- set minimum supported version to Pale Moon 27.5.0
+- fix statusbar progressmeter custom colors
+- don't use filters on extension icons
+- improve titlebar styling on non-compositor Windows when tabs are in titlebar
+- Win10: use white window backgrounds on active windows with no accent color applied
+- Linux: redesign appmenu button
+- minor cleanup
+
 ### 4.0.3
 - fix download icons
 - restore native toolbarbutton styling

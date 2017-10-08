@@ -7,6 +7,7 @@
 - improve titlebar styling on non-compositor Windows when tabs are in titlebar
 - Win10: use white window backgrounds on active windows with no accent color applied
 - Linux: redesign appmenu button
+- Linux: make sure menubar can use lwthemes
 - minor cleanup
 
 ### 4.0.3

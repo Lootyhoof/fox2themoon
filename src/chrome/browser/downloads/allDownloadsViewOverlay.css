@@ -74,3 +74,31 @@ richlistitem[type="download"][alternate="true"]:not([selected="true"]) {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
+/*** "Downloads Window" extension fixes ***/
+
+/* Make download items be correctly-sized */
+#downloadsWindow #downloadsRichListBox > richlistitem.download {
+  height: auto !important;
+  min-height: 46px !important;
+  padding: 4px 8px 4px 4px !important;
+}
+
+/* Make pause/resume icons more theme-native */
+#downloadsWindow .downloadPause,
+#downloadsWindow .downloadResume {
+  list-style-image: url("chrome://browser/skin/downloads/buttons.png") !important;
+}
+
+#downloadsWindow .downloadButton.downloadPause,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadPause,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadPause:hover,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadPause:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
+
+#downloadsWindow .downloadButton.downloadResume,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadResume,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadResume:hover,
+#downloadsWindow richlistitem.download:hover .downloadButton.downloadResume:active {
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+}

@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.0.5
+- fix places window back/forward icons
+- visual fixes to "Downloads Window" extension
+
 ### 4.0.4
 - set minimum supported version to Pale Moon 27.5.0
 - fix statusbar progressmeter custom colors

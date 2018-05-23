@@ -7,3 +7,9 @@ skin	os	f2tm	chrome/os/linux/		os=Linux
 skin	os	f2tm	chrome/os/darwin/		os=Darwin
 
 skin	abouthome	f2tm	chrome/abouthome/
+
+skin	appver	f2tm	chrome/appver/27/		appversion<28.0.0a1
+skin	appver	f2tm	chrome/appver/28/		appversion>=28.0.0a1
+
+override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
+override chrome://browser/skin/permissions/aboutPermissions.css chrome://browser/skin/preferences/aboutPermissions.css

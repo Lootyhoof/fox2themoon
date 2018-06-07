@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.1.0
+- add initial Pale Moon 28 support
+- don't use background image on standalone image viewer
+
 ### 4.0.5
 - fix places window back/forward icons
 - visual fixes to "Downloads Window" extension

@@ -85,36 +85,6 @@ toolbar[type="menubar"][autohide="true"][inactive="true"]:not([customizing="true
 margin-bottom: -1px;
 }
 
-
-/* ::::: checkbox and radio menuitems ::::: */
-
-menuitem[type="checkbox"],
-menuitem[checked="true"] {
-  -moz-appearance: checkmenuitem;
-}
-
-menuitem[type="checkbox"] > .menu-iconic-left,
-menuitem[checked="true"] > .menu-iconic-left {
-  -moz-appearance: menucheckbox;
-  padding-top: 0px;
-}
-
-menuitem[type="radio"] {
-  -moz-appearance: radiomenuitem;
-}
-menuitem[type="radio"] > .menu-iconic-left {
-  -moz-appearance: menuradio;
-  padding-top: 0px;
-}
-
-menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[checked="true"] > .menu-iconic-left > .menu-iconic-icon,
-menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
-  /* prevent .menu-iconic-icon from enforcing a minimal height of 16px (see bug 411064)
-     XXXzeniko apply that .menu-iconic-icon rule only for children of .menu-iconic */
-  display: none;
-}
-
 #personal-bookmarks {
   min-height: 26px;
 }
@@ -1324,7 +1294,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 .browserContainer > findbar {
-  background-color: -moz-dialog;
+  background-color: var(--toolbar-custom-color);
   color: -moz-DialogText;
   text-shadow: none;
 }

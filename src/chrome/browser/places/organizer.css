@@ -28,13 +28,13 @@
 
 #back-button,
 #forward-button:-moz-locale-dir(rtl) {
-  -moz-margin-start: 8px;
+  margin-inline-start: 8px;
   -moz-image-region: rect(0px, 24px, 24px, 0px);
 }
 
 #forward-button,
 #back-button:-moz-locale-dir(rtl) {
-  -moz-margin-end: 8px;
+  margin-inline-end: 8px;
   -moz-image-region: rect(0px, 48px, 24px, 24px);
 }
 
@@ -66,8 +66,8 @@
 }
 
 #placesMenu > menu {
-  -moz-padding-start: 4px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 4px;
+  padding-inline-end: 1px;
   padding-top: 2px;
   padding-bottom: 2px;
   -moz-appearance: toolbarbutton;
@@ -81,14 +81,14 @@
 
 #placesMenu > menu[open="true"] {
   border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
-  -moz-padding-start: 5px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 5px;
+  padding-inline-end: 0px;
   padding-top: 3px;
   padding-bottom: 1px;
 }
 
 #placesMenu > menu > .menubar-text {
-  -moz-padding-end: 8px;
+  padding-inline-end: 8px;
   background: url(chrome://global/skin/arrow/arrow-dn.gif) right center no-repeat;
 }
 
@@ -215,7 +215,7 @@
 #organizerScopeBar {
   -moz-appearance: toolbox;
   padding: 2px 0;
-  -moz-padding-end: 3px;
+  padding-inline-end: 3px;
 }
 
 #organizerScopeBar > toolbarbutton {

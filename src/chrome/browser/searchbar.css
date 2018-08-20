@@ -24,21 +24,21 @@
   width: 16px;
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
-  -moz-margin-start: 3px;
+  margin-inline-start: 3px;
 }
 
 .searchbar-engine-button {
   -moz-appearance: none;
   min-width: 0;
   margin: 0;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   padding: 2px 0;
   border: 0;
   -moz-box-align: center;
   background: -moz-dialog url("chrome://browser/skin/Search-provider-bkgnd.png");
   background-position: -1px -1px;
   outline: 1px solid ThreeDShadow;
-  -moz-margin-start: -1px;
+  margin-inline-start: -1px;
   -moz-outline-radius-topleft: 2px;
   -moz-outline-radius-bottomleft: 2px;
 }
@@ -62,7 +62,7 @@
 .searchbar-engine-button > .button-box {
   -moz-appearance: none;
   padding: 0;
-  -moz-padding-end: 3px;
+  padding-inline-end: 3px;
   border: 0;
 }
 
@@ -73,7 +73,7 @@
 
 .searchbar-dropmarker-image {
   list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
-  -moz-margin-start: 3px;
+  margin-inline-start: 3px;
 }
 
 /* ::::: search-go-button ::::: */

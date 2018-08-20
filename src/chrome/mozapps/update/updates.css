@@ -30,8 +30,8 @@ link {
   border: 1px solid transparent;
   margin-top: 1px;
   margin-bottom: 4px;
-  -moz-margin-start: 5px;
-  -moz-margin-end: 5px;
+  margin-inline-start: 5px;
+  margin-inline-end: 5px;
   text-decoration: underline !important;
 }
 
@@ -93,8 +93,8 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
 #licenseContent {
   margin-top: 1px;
   margin-bottom: 2px;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 5px;
+  margin-inline-start: 6px;
+  margin-inline-end: 5px;
   -moz-appearance: listbox;
   padding-bottom: 1px;
 }
@@ -186,8 +186,8 @@ wizard[currentpageid="updatesfound"] .wizard-button[dlgtype="next"] > .button-bo
 #errorReason {
   margin-top: 1px;
   margin-bottom: 2px;
-  -moz-margin-start: 6px !important;
-  -moz-margin-end: 5px;
+  margin-inline-start: 6px !important;
+  margin-inline-end: 5px;
   font-weight: bold;
 }
 

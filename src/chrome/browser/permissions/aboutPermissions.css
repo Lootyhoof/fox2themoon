@@ -60,7 +60,7 @@ colorpicker[type="button"] {
 .site-favicon {
   height: 16px;
   width: 16px;
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
@@ -78,7 +78,7 @@ colorpicker[type="button"] {
 
 #site-description {
   font-size: 125%;
-  -moz-margin-start: 6px; /* to match button margin */
+  margin-inline-start: 6px; /* to match button margin */
 }
 
 #site-label {
@@ -90,7 +90,7 @@ colorpicker[type="button"] {
 #defaults-description {
   font-size: 125%;
   font-weight: bold;
-  -moz-margin-start: 6px;
+  margin-inline-start: 6px;
 }
 
 .pref-item {
@@ -100,7 +100,7 @@ colorpicker[type="button"] {
 .pref-icon {
   width: 32px;
   height: 32px;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
 }
 
 /* no 64x64 Question image available, using the 32x32 one */
@@ -133,7 +133,7 @@ colorpicker[type="button"] {
   -moz-image-region: rect(0px, 24px, 24px, 0px);
   width:24px;
   height:24px;
-  -moz-margin-end: 18px;
+  margin-inline-end: 18px;
 }
 .pref-icon[type="desktop-notification"] {
   list-style-image: url(chrome://browser/skin/notification-64.png);

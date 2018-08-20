@@ -9,4 +9,3 @@ skin	os	f2tm	chrome/os/darwin/		os=Darwin
 skin	abouthome	f2tm	chrome/abouthome/
 
 override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
-override chrome://browser/skin/permissions/aboutPermissions.css chrome://browser/skin/preferences/aboutPermissions.css

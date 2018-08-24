@@ -35,7 +35,7 @@
   padding: 2px 0;
   border: 0;
   -moz-box-align: center;
-  background: -moz-dialog url("chrome://browser/skin/Search-provider-bkgnd.png");
+  background: var(--toolbar-custom-color) url("chrome://browser/skin/Search-provider-bkgnd.png");
   background-position: -1px -1px;
   outline: 1px solid ThreeDShadow;
   margin-inline-start: -1px;
@@ -86,7 +86,7 @@
   list-style-image: url("chrome://global/skin/icons/Search-glass.png");
   -moz-image-region: rect(3px 20px 19px 4px);
   outline: 1px solid ButtonShadow !important;
-  background: -moz-Dialog url("chrome://browser/skin/Search-bkgnd.png") !important;
+  background: var(--toolbar-custom-color) url("chrome://browser/skin/Search-bkgnd.png") !important;
   background-position: 0 -1px !important;
   -moz-outline-radius-topright: 3px !important;
   -moz-outline-radius-bottomright: 3px !important;

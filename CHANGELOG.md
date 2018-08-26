@@ -1,5 +1,13 @@
 # Changelog
 
+### 4.3.0
+- sync global stylings with Pale Moon 28
+- remove redundant devtools styling
+- mark as compatible with Pale Moon 28 only
+- make searchbar button background customisable with vars
+- use non-prefixed -inline syntax
+- update media controls
+
 ### 4.2.0
 - add PM28 newtab styling
 - add tabbrowser findbar styling

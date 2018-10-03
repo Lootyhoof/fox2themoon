@@ -1,0 +1,402 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url(chrome://communicator/skin/);
+
+:root {
+    --toolbar-custom-color: -moz-Dialog;
+    --shadow-color: ThreeDShadow;
+    --tab-background: url("chrome://browser/skin/tabbrowser/tab-middle-bkgnd.png") 0px -2px repeat-x;
+    --tab-background-hover: url("chrome://browser/skin/tabbrowser/tab-middle-hover.png") 0px -2px repeat-x;
+    --tab-border-radius: 3px;
+    --tab-selected-background: url("chrome://browser/skin/tabbrowser/tab-middle.png") 0px -2px repeat-x;
+}
+
+window {
+    width: 640px;
+    height: 480px;
+    background: var(--toolbar-custom-color);
+}
+
+#menu-view-none {
+    display: none;
+}
+
+#header-url:hover {
+    text-decoration: underline;
+}
+
+#outer-box {
+    margin: 5px;
+}
+
+.toolbarbutton-menu-dropmarker {
+    margin-left: 0.5em;
+}
+
+#input-widget,
+#input-widget-multiline {
+    border: thin silver inset;
+}
+
+#button-multiline-expand {
+    list-style-image:url("chrome://ambassador/skin/images/multiline-expand.png");
+}
+
+#button-multiline-contract {
+    list-style-image:url("chrome://ambassador/skin/images/multiline-contract.png");
+}
+
+#button-input {
+    list-style-image:url("chrome://ambassador/skin/images/input-send.png");
+}
+
+.highlight-menu-item:hover {
+    color: white !important;
+    background: darkslategrey !important;
+}
+
+#user-list {
+    margin: 0;
+}
+
+#tabstrip-box {
+    /* Move the tabstrip on top and style it like a browser tab */
+    -moz-box-ordinal-group: 1;
+    -moz-appearance: none;
+    background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x;
+    border-top: 1px solid var(--shadow-color);
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+#tabpanels-contents-box {
+    -moz-box-ordinal-group: 2;
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+#view-tabs {
+    overflow: hidden;
+}
+
+#views-tbar-spacer {
+    -moz-box-flex: 10000;
+}
+
+#tabs-drop-indicator-bar {
+    position: relative;
+    margin-top: -3px;
+    -moz-margin-start: -5px;
+    height: 3px;
+}
+
+#tabs-drop-indicator {
+    position: relative;
+    margin-right: -11px;
+    margin-bottom: -8px;
+    width: 11px;
+    height: 11px;
+    background: url(images/drop-indicator-bottom.png) 50% 50% no-repeat;
+}
+
+.view-button {
+    -moz-appearance: none;
+    background: var(--tab-background);
+    margin: 2px 0px 0px;
+    padding: 3px 1px 3px 20px;
+    border: 2px solid;
+    border-width: 1px;
+    border-bottom: none;
+    border-radius: var(--tab-border-radius) var(--tab-border-radius) 0 0;
+    -moz-border-top-colors: var(--shadow-color) rgba(255,255,255,.3);
+    -moz-border-right-colors: rgba(0,0,0,.1) transparent;
+    -moz-border-left-colors: var(--shadow-color) rgba(255,255,255,.3);
+}
+
+.view-button:first-child {
+    border-left-color: transparent;
+}
+
+.view-button::before {
+    content: " ";
+    display: -moz-box;
+    margin: -5px -5px 0 -5px;
+    height: 4px;
+}
+
+.view-button:hover,
+.view-button[state="current"] {
+    -moz-border-top-colors: var(--shadow-color);
+    -moz-border-right-colors: var(--shadow-color);
+    -moz-border-left-colors: var(--shadow-color);
+}
+
+.view-button:not([state="current"]):hover {
+    background: var(--tab-background-hover);
+}
+
+.view-button[state="current"] {
+    background: var(--tab-selected-background);
+    font-weight: bold;
+}
+
+.view-button[state="current"]:not(:-moz-lwtheme) {
+    background-color: var(--toolbar-custom-color);
+}
+
+.view-button[state="superfluous"] {
+    color: darkblue;
+}
+
+.view-button[state="activity"] {
+    color: darkgreen;
+}
+
+.view-button[state="attention"] {
+    background-color: red;
+    color: white;
+}
+
+treecol { 
+    border: none;
+}
+
+/* we need to define both the : and :: versions of the treechildren selector
+ *  so that we work on both 1.5 and pre 1.5 builds.
+ *
+ * The userlist can be in one of two state.  In "symbol", the user's
+ * channel mode is shown as a @ or + image, while in "graphic" mode, the
+ * image is one of the LED images.
+ */
+
+/* no mode */
+treechildren:-moz-tree-image {
+    list-style-image: url(chrome://ambassador/skin/images/no-symbol.png);
+}
+
+treechildren::-moz-tree-image {
+    list-style-image: url(chrome://ambassador/skin/images/no-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image {
+    list-style-image: url(chrome://ambassador/skin/images/no-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image {
+    list-style-image: url(chrome://ambassador/skin/images/no-graphic.png);
+}
+
+/* voice */
+treechildren:-moz-tree-image(voice-true) {
+    list-style-image: url(chrome://ambassador/skin/images/voice-symbol.png);
+}
+
+treechildren::-moz-tree-image(voice-true) {
+    list-style-image: url(chrome://ambassador/skin/images/voice-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(voice-true) {
+    list-style-image: url(chrome://ambassador/skin/images/voice-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(voice-true) {
+    list-style-image: url(chrome://ambassador/skin/images/voice-graphic.png);
+}
+
+/* half-chanop */
+treechildren:-moz-tree-image(halfop-true) {
+    list-style-image: url(chrome://ambassador/skin/images/halfop-symbol.png);
+}
+
+treechildren::-moz-tree-image(halfop-true) {
+    list-style-image: url(chrome://ambassador/skin/images/halfop-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(halfop-true) {
+    list-style-image: url(chrome://ambassador/skin/images/halfop-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(halfop-true) {
+    list-style-image: url(chrome://ambassador/skin/images/halfop-graphic.png);
+}
+
+/* chanop */
+treechildren:-moz-tree-image(op-true) {
+    list-style-image: url(chrome://ambassador/skin/images/op-symbol.png);
+}
+
+treechildren::-moz-tree-image(op-true) {
+    list-style-image: url(chrome://ambassador/skin/images/op-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(op-true) {
+    list-style-image: url(chrome://ambassador/skin/images/op-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(op-true) {
+    list-style-image: url(chrome://ambassador/skin/images/op-graphic.png);
+}
+
+/* admin */
+treechildren:-moz-tree-image(admin-true) {
+    list-style-image: url(chrome://ambassador/skin/images/admin-symbol.png);
+}
+
+treechildren::-moz-tree-image(admin-true) {
+    list-style-image: url(chrome://ambassador/skin/images/admin-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(admin-true) {
+    list-style-image: url(chrome://ambassador/skin/images/admin-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(admin-true) {
+    list-style-image: url(chrome://ambassador/skin/images/admin-graphic.png);
+}
+
+/* founder */
+treechildren:-moz-tree-image(founder-true) {
+    list-style-image: url(chrome://ambassador/skin/images/founder-symbol.png);
+}
+
+treechildren::-moz-tree-image(founder-true) {
+    list-style-image: url(chrome://ambassador/skin/images/founder-symbol.png);
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(founder-true) {
+    list-style-image: url(chrome://ambassador/skin/images/founder-graphic.png);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(founder-true) {
+    list-style-image: url(chrome://ambassador/skin/images/founder-graphic.png);
+}
+
+/* away */
+treechildren:-moz-tree-cell-text(away-true) {
+    color: GrayText;
+    font-style: italic;
+}
+
+treechildren::-moz-tree-cell-text(away-true) {
+    color: GrayText;
+    font-style: italic;
+}
+
+treechildren:-moz-tree-cell-text(away-false) {
+}
+
+treechildren::-moz-tree-cell-text(away-false) {
+}
+
+menuitem[header="true"] {
+    text-align: center;
+}
+
+.colorGrid
+{
+    width: 24px;
+    height: 16px;
+    border: 1px solid black;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+}
+
+#colorTooltip
+{
+    padding: 0px;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+}
+
+/* Feel the hacks. */
+progressmeter[mode="undetermined"] {
+    -moz-appearance: none;
+}
+
+[dir="ltr"] {
+    direction: ltr;
+}
+
+[dir="rtl"] {
+    direction: rtl;
+}
+
+#input-splitter {
+    margin: 4px 0 0 0;
+}
+
+#input-widgets {
+    margin: 4px 0;
+}
+
+#server-nick, #button-multiline-expand, #button-input, #button-multiline-contract {
+    margin: 0;
+}
+
+#input, #multiline-input {
+    margin: 0 4px;
+}
+
+/* Hack; Stop the status-bar from distorting without a security icon */
+#status-text {
+    min-height: 17px;
+}
+
+#status-text[notice="true"] {
+    font-weight: bold;
+}
+
+#security-button {
+    min-width: 20px;
+}
+
+#security-button:not([level="high"]):not([level="low"]):not([level="broken"]) {
+    display: none;
+}
+
+#security-button[level="high"] > image {
+    list-style-image: url("chrome://ambassador/skin/images/secure.png");
+}
+
+#security-button[level="low"] > image {
+    list-style-image: url("chrome://ambassador/skin/images/secure-low.png");
+}
+
+#security-button[level="broken"] > image {
+    list-style-image: url("chrome://ambassador/skin/images/secure-broken.png");
+}
+
+/* prevent margins of a value-less label from shifting the image */
+#security-button > label:not([value]) {
+    display: none;
+}
+
+#alert-status[alertstate="off"] {
+    list-style-image: url("chrome://ambassador/skin/images/spbubble-off.png");
+}
+
+#alert-status[alertstate="on"] {
+    list-style-image: url("chrome://ambassador/skin/images/spbubble-on.png");
+}
+
+#logging-status[loggingstate="off"] {
+    list-style-image: url("chrome://ambassador/skin/images/logging-off.png");
+}
+
+#logging-status[loggingstate="on"] {
+    list-style-image: url("chrome://ambassador/skin/images/logging-on.png");
+}
+
+#offline-status[offlinestate="offline"] {
+    list-style-image: url("chrome://ambassador/skin/images/offline.png");
+}
+
+#offline-status[offlinestate="online"] {
+    list-style-image: url("chrome://ambassador/skin/images/online.png");
+}
+
+/* Focus styling for a11y reasons */
+#user-list-box[focusobvious="true"], #browser-box[focusobvious="true"],
+#multiline-hug-box[focusobvious="true"], #singleline-hug-box[focusobvious="true"] {
+    outline: 2px solid highlight;
+}

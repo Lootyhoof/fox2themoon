@@ -67,7 +67,8 @@ window {
     -moz-appearance: none;
     background: url("chrome://browser/skin/tabbrowser/tabbrowser-tabs-bkgnd.png") repeat-x;
     border-top: 1px solid var(--shadow-color);
-    border-bottom: 1px solid var(--shadow-color);
+    border-bottom: 3px solid;
+    -moz-border-bottom-colors: -moz-Dialog -moz-Dialog var(--shadow-color);
 }
 
 #tabpanels-contents-box {
@@ -77,6 +78,8 @@ window {
 
 #view-tabs {
     overflow: hidden;
+    margin-inline-start: 3px;
+    margin-bottom: -1px;
 }
 
 #views-tbar-spacer {

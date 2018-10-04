@@ -325,7 +325,7 @@ progressmeter[mode="undetermined"] {
 }
 
 #input-splitter {
-    margin: 4px 0 0 0;
+    border: none;
 }
 
 #input-widgets {

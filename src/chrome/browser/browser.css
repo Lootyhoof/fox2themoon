@@ -14,7 +14,6 @@
   --appmenu-border-radius: 4px;
   
   --toolbar-custom-color: -moz-Dialog;
-  --toolbar-text-color: -moz-DialogText;
   
   --shadow-color: ThreeDShadow;
   
@@ -1035,7 +1034,7 @@ toolbar[iconsize="small"] #zoom-in-button {
 }
 
 #identity-box:focus {
-  outline: 1px dotted var(--toolbar-text-color);
+  outline: 1px dotted -moz-DialogText;
 }
 
 #identity-box:hover {
@@ -1477,7 +1476,7 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 }
 
 .tabbrowser-tab:focus .tab-text {
-  border: 1px dotted var(--toolbar-text-color);
+  border: 1px dotted -moz-DialogText;
 }
 
 /* Tab DnD indicator */
@@ -2008,7 +2007,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .notification-anchor-icon:-moz-focusring {
-  outline: 1px dotted var(--toolbar-text-color);
+  outline: 1px dotted -moz-DialogText;
   outline-offset: -3px;
 }
 
@@ -2218,7 +2217,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-appearance: none;
   border: none;
   background: var(--toolbar-custom-color);
-  color: var(--toolbar-text-color);
+  color: -moz-DialogText;
 }
 
 #allTabs-meta {
@@ -2267,7 +2266,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .allTabs-preview:focus > * > .allTabs-preview-inner {
-  outline: 1px dotted var(--toolbar-text-color);
+  outline: 1px dotted -moz-DialogText;
 }
 
 /* searchbar fix */

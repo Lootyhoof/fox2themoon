@@ -1,5 +1,5 @@
 # Fox 2 The Moon
-![Preview](http://i63.tinypic.com/23sirsm.png)
+![Preview](https://i.imgur.com/5zD2fsD.png)
 
 Fork of the theme [Firefox 2, the theme, reloaded](https://github.com/rctgamer3/ff2-default) for Pale Moon and Ambassador.
 

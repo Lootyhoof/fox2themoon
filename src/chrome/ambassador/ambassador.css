@@ -89,7 +89,7 @@ window {
 #tabs-drop-indicator-bar {
     position: relative;
     margin-top: -3px;
-    -moz-margin-start: -5px;
+    margin-inline-start: -5px;
     height: 3px;
 }
 

@@ -913,6 +913,14 @@ toolbar[iconsize="small"] #zoom-in-button {
   -moz-border-left-colors: ThreeDHighlight var(--shadow-color);
 }
 
+toolbar[brighttext] #window-controls > toolbarbutton > .toolbarbutton-icon {
+  filter: invert(1);
+}
+
+#main-window[tabsontop=false] #window-controls {
+  margin-top: -3px;
+}
+
 #minimize-button {
   list-style-image: url("chrome://global/skin/icons/Minimize.gif");
 }

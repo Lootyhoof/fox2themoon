@@ -81,11 +81,17 @@ toolbarbutton.bookmark-item > menupopup {
   margin-inline-end: 5px;
 }
 
+/* Blend the topmost toolbar with the titlebar */
+
+#main-window[tabsontop=false] #nav-bar:not(:-moz-lwtheme) {
+  -moz-appearance: toolbar;
+}
+
 /* Private browsing indicator */
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
   display: -moz-box;
   content: "";
   background: url("chrome://browser/skin/privatebrowsing-dark.png") center no-repeat;
-  width: 40px;
+  width: 30px;
 }

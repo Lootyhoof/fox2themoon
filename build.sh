@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 NAME=f2tm
 VER=${1:-dev}
 FILE=$NAME-$VER-pm.xpi

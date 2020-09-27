@@ -1032,6 +1032,10 @@ toolbar[brighttext] #window-controls > toolbarbutton > .toolbarbutton-icon {
   background: rgb(91, 150, 223) !important;
 }
 
+#notification-popup-box:not([hidden]) + #identity-box.mixedContent{
+  background: rgb(183, 183, 78) !important;
+}
+
 #identity-box.verifiedDomain {
   color: #ffffff;
   background-color: rgba(91, 150, 223, 1) !important;
@@ -1040,6 +1044,11 @@ toolbar[brighttext] #window-controls > toolbarbutton > .toolbarbutton-icon {
 #identity-box.verifiedIdentity {
   color: #ffffff;
   background-color: rgba(87, 196, 51, 1) !important;
+}
+
+#identity-box.mixedContent {
+  color: #ffffff;
+  background-color: rgb(183, 183, 78) !important;
 }
 
 #identity-box:focus {

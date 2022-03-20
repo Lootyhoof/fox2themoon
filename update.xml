@@ -19,7 +19,7 @@
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                 <em:minVersion>30.0.0a1</em:minVersion>
                 <em:maxVersion>30.*</em:maxVersion>
-                <em:updateLink>https://github.com/Lootyhoof/camimoon/releases/download/v2.7.0/f2tm-4.7.0-pm.xpi</em:updateLink>
+                <em:updateLink>https://github.com/Lootyhoof/camimoon/releases/download/v4.7.0/f2tm-4.7.0-pm.xpi</em:updateLink>
               </RDF:Description>
             </em:targetApplication>
           </RDF:Description>

@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.8.0
+- initial HTML date/time picker support
+- improve about:newtab search button readability
+- support Pale Moon 31
+
 ### 4.7.0
 - add mixed-mode SSL styling
 - improve findbar appearance

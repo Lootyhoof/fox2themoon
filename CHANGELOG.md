@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.8.1
+- support Pale Moon 32
+
 ### 4.8.0
 - initial HTML date/time picker support
 - improve about:newtab search button readability
